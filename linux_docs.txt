@@ -1,0 +1,1269 @@
+LINUX ADMINISTRATION AND SHELL SCRIPTING :
+-----------------------------------------
+     ***Linux is an open-source, Unix-like operating system kernel that powers various distributions for servers, desktops, and embedded systems.
+
+diff b/w Desktop and Server
+----------------------------
+        ***desktop is a single user and multi tasking operating system.
+               EX: Windows ----> 10/11
+                   Linux ----> ubuntu desktop version 
+ 
+        ***server is a multi user and multi tasking operating system.
+               EX: Windows -----> 2016/2017/2020/2024
+                   Linux -------> rhel/fedora/susu
+
+LINUX :
+-------
+        Linux is an "open source" , "Command Line Interface (CLI)", "set of command" , "Support Kernel"  "More secure than windows" 
+                  ****LLINUX is not and Operating System it is just a KERNEL 
+                  ****Linux was invented by ""Linus Torvalds"" in ""1991.
+
+KERNEL :
+--------
+          *** the kernel is the core of the operating system that manages hardware resources and provides a bridge for communication between hardware and software. 
+
+SHELL :
+--------
+          ***  the shell is a command-line interface that allows users to interact with the operating system by executing commands.
+
+OPERATING SYSTEM :
+-------------------
+        OS is a broker or mediator between "user" and "hardware".
+
+          HARDWARE
+            ||
+      OPERATING SYSTEM         ### inside operating there present  "KERNEL" AND "SHELL"
+            ||
+           USER
+
+
+
+          HARDWARE
+            ||
+           KERNEL              
+            ||
+           SHELL      ### SHELL understands the commands of the user and it knows the KERNEL understand commands 
+            ||
+           USER
+
+  --------> In Windows we can have different types of drives like C:/drive , D:/drive , E:/drive
+  --------> In Linux we have single file type only 
+                       under these file only we have to setup what we want.
+
+FILE HIERARCHY STANDARD (FHS) :   ###go to this link for images  ------>  https://static.thegeekstuff.com/wp-content/uploads/2010/11/filesystem-structure.png
+-------------------------
+/ ------> Top level directory   (or) root directory
+Root ------> Owner of the Account
+/root -----> Home directory of the owner of the account (root user)
+
+
+       |---------> /bin  ------->essential user binaries
+       |
+       |
+       |---------> /boot -------> boot leader files
+       |
+       |
+       |---------> /dev --------> Device files
+       |
+       |
+       |---------> /etc --------> system global configuration files
+       |
+       |
+       |---------> /home -------> user's home Directories
+       |
+       |
+       |---------> /lib --------> system libraries and kernel modules
+       |
+       |
+       |---------> /lost+found--> stores corrupted FS(File System) files
+       |
+       |
+       |---------> /media ------> mount point for external/removable device
+       |
+       |
+/ ---->|---------> /mnt --------> temporary mount point
+       |
+       |
+       |---------> /opt --------> optional Application Software Packages
+       |
+       |
+       |---------> /proc -------> procfs-process and kernel information                                                      |-----------> /usr/local/bin
+       |                                                                                                                     |
+       |                                                                                                                     |-----------> /usr/local/lib
+       |---------> /root -------> root user (or) home directory                                                              |
+       |                                                                                  |--------> /usr/bin                |-----------> /usr/local/sbin
+       |                                                                                  |                                  |
+       |---------> /sbin -------> essential system binaries                               |--------> /usr/lib                |-----------> /usr/local/share
+       |                                                                                  |                                  |
+       |                                                                                  |--------> /usr/local ------------>|-----------> /usr/local/src
+       |---------> /srv --------> Service Data Directories                                |                                                                                  
+       |                                                                                  |--------> /usr/sbin
+       |                                                                                  |
+       |---------> /sys --------> sysfs- Device and Kernel information                    |--------> /usr/share
+       |                                                                                  |
+       |                                                                                  |--------> /usr/src
+       |---------> /tmp --------> temporary files                                         |
+       |                                                                                  |   |----------> /var/cache
+       |                                                                                  |   |
+       |---------> /usr --------> user utilities and applications ------------------------|   |----------> /var/lib
+       |                                                                                      |
+       |                                                                                      |----------> /var/lock
+       |---------> /var --------> variable files ---------------------------------------------|
+                                                                                              |----------> /var/log
+                                                                                              |
+                                                                                              |----------> /var/mail
+                                                                                              |
+                                                                                              |----------> /var/spool
+
+
+
+BASIC COMMANDS :
+----------------
+$ ------> it is an normal user 
+# ------> it is an root user or admin user or owner account
+~ ------> current directory of the login user
+
+pwd ----->present working directory
+
+man pwd -------> the current working location or a location stack.
+
+cd / ------>change directory          ##cd /home/desktop/sreenu_files/
+
+cd ..  --------> come to previous directory          ###cd.. /abc/home/xyz ----> abc/home
+
+ls or ll -------> list in directory  (A - Z)      ### shows the only directory files (short form)   ###ll will work on some command let files only.
+
+ls -l -------> list in long directory      ### detailed view of the present directory  (Directory , file name , owner , modification time)
+
+init 0 --------> to shutdown only ""REDHAT VIRTUAL MACHINE""
+
+sudo init 0 --------> to restart only ""REDHAT VIRTUAL MACHINE""
+
+mkdir --------> create a new file  ### EX : mkdir sreenu  ### (sreenu) ------> file name 
+
+mkdir <Folder Folder1 Folder2 1 2 3> --------> it will create 6 files in one single command       ####<file1 file2 file3 1 2 3>-----> each one will consider into separate file name 
+
+ls -lr or ls -l -r     ==-------> ""reverse"" order of the directory files   (Z -A)       ### r ----> reverse 
+             *** we can write it one single time or separate using space 
+
+ls -lt or ls -l -t      ==-------> list of directory files based on ""time""       ###t ------> based on time
+             *** we can write it one single time or separate using space 
+
+ls -ltr or ls -l -t -r    ==-------> list of files in a directory based on time reversed order         ###t , r -----> time , reverse
+             *** we can write it one single time or separate using space 
+
+man ls ---------> it is like an help command 
+
+shift q --------> quit
+
+FILE CREATION IN THE LINUX DIRECTORIES :
+-----------------------------------------
+
+mkdir ------> making a new directory
+ 
+rmdir <directory name> ------> deletion of the empty directory        ### Example ------ > rmdir /sreenu/abc/xyz       ###  sreenu/abc/xyz ---->file names 
+
+rm -r <directory name>  ------> non directory deletion or empty directory deletion 
+ 
+rm -rf <directory name > ------> deleting a directory forcefully
+
+
+3rd party CLI applications::
+-----------------------------
+      ----->putty
+      ----->mobaXterm
+      -----> PowerShell
+
+File Creation ::
+-----------------
+
+       cat ---> ( concatenate ) ----->  ""CAT"" command is used to create a file and append the content to the file at the end. 
+                                              ----->It will display the file content 
+
+
+cat > file name --------> use to create a new file or over ride the existing file   ###example :: > (greater than symbol)  
+            ****Example ::  cat > file1.txt
+                            my name is Sreenivas Reddy
+                            my age is 21
+                            i am from Andhra Pradesh
+                            currently staying in Bangalore
+                                ctrl+d     ----> end of the program
+ctrl + d -------> will stop the program when we press the ""ctrl + d"" 
+
+cat -n  file1.txt ------> shows the data that stores in the file in the number vise order 
+              ****Example :: cat -n  file1.txt
+                             1  my name is Sreenivas Reddy
+                             2  my age is 21
+                             3  i am from Andhra Pradesh
+                             4  currently staying in Bangalore
+
+cat filename --------> shows the data that stores in the file with out numbers.
+               ***example :: cat file1.txt
+                               my name is Sreenivas Reddy
+                               my age is 21
+                               i am from Andhra Pradesh
+                               currently staying in Bangalore
+
+cat >> file name -------> use to append or redirection operator                     ### example :: >> (double greater than symbol )
+                        
+
+cat file1 file2 > combined file   ----------> it combines multiple file data into one single file  
+
+touch file1.txt ------> it will create a new file like"" CAT ""
+
+touch file1.txt file2.txt file3.txt ------------> creating multiple files at one time
+
+touch -t 202312011230.45 file.txt -------------> create a file with custom time stamp           
+
+touch -a file.txt -------> change only access of the file 
+
+touch -m file.txt  -------> changes the only modification time 
+
+echo ---------> it is like a print command        
+            ***example  :: echo {1..10} ------> 1 2 3 4 5 6 7 8 9 10	  
+EDITORS::
+---------
+VI is an editor
+
+vim editor/ vi editor -------> this two editors are universal users for the Linux dictionary
+
+vi visual display editor improved  (only colour code to the VI EDITOR)
+
+/tmp ---------> universal writing table
+
+man vi ------> helps in the VI commands
+
+vi -------> vi  can use the normal user or root user 
+
+vi -------> vi can use the file r existing file 
+
+vi -r filename -------> it will recover the deleted file data or crashed data               ###ex ----> vi -r abc      -----> abc is the file name	
+
+:%s/old/new/g ---------> it will change the code from "OLD" replaces "NEW" in the entire file 
+           ***example ---> hi fair morning                              hi good morning               ###here fair changes to good using these command                 
+                           fair afternoon                               good afternoon 
+                           fair evening                                 good evening
+                           fair night                                   good night    
+
+:%s/old/new/gc  --------> this command also changes the code from old to new          ### c ----> conformation 
+
+:s/old/new/g ------------> it will change the code of a current line                     ###  only change in single line 
+
+vi --->scripting ---> awk/sed   ====> this 2 commands are used in the scripting 
+
+
+there are 3 modes in the EDITORS:
+----------------------------------
+       i)command mode
+      ii)insert mode/edit mode
+     iii)extended mode / quit /save mode
+*** first we have to create a file in the command mode                                                   ### there is no way to come direct insert mode to extend mode
+    when we have to edit the test file we have to come to the "insert mode"                              ### command mode to insert mode use ---->u,i,o
+    after completing the edit file then we have to come back to the "command mode to save the file.      ### to come back insert mode to command mode use ---->esc 
+    
+
+COMMAND MODE ::
+--------------
+        ***Command Mode often refers to the mode in the vi or vim text editor .
+
+press esc -----> exit from the any other modes
+
+Navigation:
+------------ 
+         h-------------> Move left.
+         l-------------> Move right.
+         j------------->move down.
+         k------------> Move up.
+Text Manipulation:
+-------------------
+         dd---------> Delete the current line.
+         yy---------> Copy (yank) the current line.
+         p----------> Paste the copied content.
+
+Search:
+-------
+        /text--------->Search for "text" in the file.  
+         n-------------> Jump to the next match.
+         N-------------> Jump to the previous match
+
+File Management:
+
+        :w--------------> Save the file.
+        :q--------------> Quit.
+        :wq-------------> Save and quit.
+        :q!-------------> Quit without saving.
+
+Undo/Redo:
+----------
+         u----------> Undo the last change.
+         Ctrl + r-------> Redo the last undone change.
+
+INSERT MODE ::
+--------------
+     ***In  VI and VIM mode we can edit the text using the ""insert mode"" 
+keys to enter the Insert mode :
+
+i(small i)---------> Insert text at the current cursor position.
+I(capital I)---------> Insert text at the beginning of the line.
+a(small a)---------> Append text after the current cursor position.
+A(capital A)--------->Append text at the end of the line.
+o(small o)---------> Open a new line below the current line.
+O(capital O)---------> Open a new line above the current line.
+
+esc ------> esc to the back of command mode 
+press i ---------> enter to the insert mode
+
+INTRODUCTION TO THE REGULAR EXPRESSIONS::
+------------------------------------------
+ 
+***regular expressions are common in the
+           i)Python
+          ii)PowerShell
+         iii)Linux Administration
+          iv)cloud (any cloud)
+     ***REGular EXpressions are written shortly as ----->""REGEX""
+
+Regular Expression -----> it is like a pattern structure
+    pattern ------> sequence of the characters (special characters) 
+ 
+pattern ----- > string like structure ----> In these string we have collection of special characters
+
+Python , PowerShell , Linux , Regular expression::
+---------------------------------------------------
+
+patterns : string ---> "<String>"
+                 <String> contains special symbols for searching the patterns
+
+pattern symbols ::
+-------------------
+1)/d 
+/d --------------> a digit           #### digit means ---> ( 0,1,2,3,4,5,6,7,8,9 total 10 digits)
+/d/d-------------> any two continuous digits
+/d/d/d-----------> any three continuous digits
+/d/d/d/d--------->any four continuous digits
+(\d){10} -------->when we have more digits we can use command 
+\D -> OTHER THAN DIGITS ANY ONE
+
+                    EXAMPLE::
+                   -----------
+                            "hiii2256 to how2423 where236516451 you all" -match "(\d){2,3}"
+                              True
+                               PS C:\> $matches  ----> this is the command to check the matches
+
+                               Name                           Value
+                               ----                           -----
+                                1                              5
+                                0                              225                 
+key words :
+       Python::: Module: re
+       Linux::: Find/awk/sed : shell scripting
+       PowerShell:::match/-not match
+
+2) \w -----> character
+		a-z  		= 26
+		A-Z  		= 26
+		0-9  		= 10
+		_(underscore)   = 01
+				------
+				  63
+				------
+EXAMPLE ::
+----------  
+        PS C:\> "g-ood Morning  to all" -match "\w\w"
+          True
+          PS C:\> $matches
+         Name                           Value
+        ------                         -------
+          0                              oo
+
+
+3) .
+ in the pattern 
+ "\w.."
+ . -> any one single character [other than newline ]
+            EXAMPLE ::
+            ----------
+                          "hii to all where are you" -match "\w\w.."
+                            True
+                           PS C:\> $matches
+
+                             Name                           Value
+                            ------                         -------
+                              0                              hii
+
+4) *
+\d  = \d* = \d\d\d\d\d\d\d\d\d\d\d\d\d\d\\d\d\d\dw
+
+\w  
+\w* = \w\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w
+
+	* -> means any number of any characters it will keep up based on the first match in the string
+5) space : \s
+n number of continues spaces : \s*
+
+\w* or \w+  => 0 repeats/n number of fine
+
+6) any special
+"----------------------------"  -match ""
+\w
+\d
+\s
+##other than this above symbols
+string 				     pattern
+  &					\&
+  $					\$
+  \					\\
+  \\                                   \\\\
+  %!					\&\!
+
+
+.* --------------->  ..............
+\w* -------------->\w\w\w\w
+\d ---------------> \d\d\d\d\d\d\d
+- ================> \-
+
+^ -> starts with cap symbol    ### EX : ----> ^keyword
+
+$ -> ends with Doller symbol      ### Ex : ----> keyword$
+
+wild *
+-------
+abc* -> starting with abc
+*abc ->  ending with abc
+*abc* -> containing with abc
+
+
+BRACKETS::
+-----------
+1) [ - ] -----> sequential characters   -----> EXAMPLE:: A--> Z , C --> G .  ## it will not come in the reverse order  
+2) ( | ) --> "or" symbol      Example:: ---->ANT","MAN","DRAW","MNO","CNN","APPLE" -match '^(a|c).*'
+                                                                          ANT
+                                                                          CNN
+                                                                          APPLE
+3) { , }   -----> example :: (\d){3,5} =======> \d\d\d
+                                                \d\d\d\d
+                                                \d\d\d\d\d
+
+
+NUMBER PATTERNS::
+-------------------
+Rules :
+       ipv4 
+      A   A   A   A     ### A= 0 - 255
+my ipv4 address ---> 103               .82        .209          .226
+                    (0 - 255)        (0 - 255)   (0 -255)      (0 - 255)
+       
+
+example ::(1)
+-----------
+
+find the number patterns from 20 - 39
+20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39
+
+smallest number --> 20    ### number of digits = 2
+Biggest number ---> 39    ### number of digits = 2
+
+     [   ]       [   ]                        ### we have to take the square brackets [] according to the number of digits
+     tens      ones/units
+
+     [2 - 3]      [0 - 9]  ------> we can write the 20 and 39 in the these form
+
+     $([][][])$  #accepts only 3 digits
+     $(   (2|5)[2-5][]()   ) $
+     ^([2-3][0-9])$  #fixed to 
+     ^()$
+
+example :: (2)
+--------------
+110 - 189
+----------
+smallest: 110 (3 digit)
+biggest: 189 (3 digit)
+
+ H     T    O
+[1] [1-8] [0-9]
+ 1  [1-8] [0-9]
+
+ 1    6     7
+
+------->there are 2 rules in the number patterns . they are
+RULE 1:
+-------
+WHEN THE SMALLEST NUMBER IS NOT 0 THEN WE HAVE TO USE THESE RULE 
+
+number pattern between 23 - 49
+#SMALLEST: 23
+	
+	>> smallest number unitplace/once place digit is 0(skip this method)
+	   (here 23, means unit/once place digit in smallest number is 3)
+
+	>> on the number line travel right side of the smallest number to get the very first number which contains with unit place value as 9
+
+
+	23.................29........................39...................49
+   (smallest)
+
+   23-29     |   30-49
+   [2][3-9]	    [3-4][0-9]
+   				    	
+   ([2][3-9]|[3-4][0-9])   
+
+RULE 2: biggest number is not equal to 9.
+-------
+
+2) BIGGEST
+
+40-85
+------
+- Biggest number unit place valus is 9(skip this method)
+  (here biggest number is 85, it's unitplaced values is 5(not 9))
+
+- travel left side of the number line of biggest number to reach very first number which contains it's unit place digits as 9
+
+
+40........................................79 80......85
+
+40-79         80-85
+[4-7][0-9]   [8][0-5]
+([4-7][0-9]|8[0-5])
+
+^()$
+
+Example 3:: applying 2 rules in the same problem.
+------------
+
+13-84
+------
+13......19 20.......................84
+13-19 = [1][3-9]
+			20-84
+			------
+			20...........................79 80.............84
+			20-79  = [2-7][0-9]              80.............84
+			                                 80-84 = [8][0-4]
+([1][3-9]|[2-7][0-9]|8][0-4])
+^()$
+"^(([1][3-9]|[2-7][0-9]|8][0-4]))$"
+
+
+Example ::(4)
+--------------
+0-255
+smallest number = 0
+biggest  number = 255
+
+we have to write these problem as  
+                      1 digit numbers   ---->0 - 9  =====> [0-9]
+                      2 digit numbers   ---->10 - 99 ====> [1-9][0-9]
+                      3 digit numbers   ---->100 - 255===> 100 -199 + 200 -255 ======> [1][0-9][0-9] + 200 -249 + 250 -255
+                                                                                                       [2][0-4][0-9] + [2][5][0-5]
+
+0-255 -====> [0-9]|[1-9][0-9]|[1][0-9][0-9]|[2][0-4][0-9] + [2][5][0-5]
+                                             
+
+
+HARD LINKS AND SOFTLINKS ::
+-----------------------------
+
+Track------->A circular path on a hard disk platter where data is stored, like a groove on a vinyl record.
+
+Sector--------->The smallest unit of data storage on a track, typically 512 bytes or 4 KB
+
+example :      Search in the link 
+-----------
+https://mcqsets.com/s/fundamentals/computer-hardware-concept/
+
+HARD LINK ::
+------------
+        ***A hard link is an additional reference (name) to the same file on the same file system.
+
+ln target_file link_name  ---------> syntax for the hard link 
+
+example ::
+------------
+ln /path/to/original_file my_hardlink
+            ||                 ||
+            \/                 \/
+       Target_file          link_name
+
+DO'S:
+------
+------->the content persists as long as there’s at least one hard link.
+------->Saves space (no duplication of data).  
+
+DONT's::
+--------
+Cannot link directories.
+Cannot cross file systems.
+
+SOFT LINK::
+------------
+      ***A soft link is essentially a pointer to another file or directory. It's like a shortcut.
+
+ln -s target_file link_name -----------> syntax for the soft file
+
+Example::
+----------
+ln -s /path/to/original_file my_symlink
+              ||                 ||
+              \/                 \/
+         target_file         link_name
+
+
+DO's :
+------
+Can link to directories or files across file systems.
+Easier to recognize (distinct file type, often indicated by l in ls -l).
+
+DONT's
+------
+Breaks if the target is moved or deleted.
+
+Different between soft link and hard link
+-------------------------------------------
+
+Feature	                               Soft Link	                               Hard Link
+-----------                          -------------------                           --------------------
+Target	                            File or directory	                               File only
+File Systems	                   Can cross file systems                  	Same file system only
+Inode Reference	                    Points to file path	                      Points directly to the inode
+Broken Link	                    Breaks if target is deleted	                Remains functional
+Directories	                     Can link to directories	                    Not allowed
+Space Usage	                      Small (path storage)	                 No additional space used
+
+SYMBOLIC LINK::
+----------------
+       ****A symbolic link (also called a soft link) in Linux is a special type of file that points to another file or directory. It works like a shortcut.
+
+ln -s target_file_or_directory link_name --------> syntax for the symbolic link
+
+Example::
+-----------
+ln -s /path/to/original_file my_symlink
+            ||                     ||
+            \/                     \/
+          target_file           link_name
+
+lrwxrwxrwx 1 user group 12 date symlink_name -> target_path  ---------------------> using this command we can identify the symbolic link 
+
+Advantages:
+-----------
+Saves space as it doesn’t duplicate the target file’s data.
+Flexible and easy to update if the file structure changes.
+
+Disadvantages:
+---------------
+Becomes invalid if the target is deleted or moved.
+
+USER ADMINISTRATION::
+------------------------
+    ***There are 3 types of users are there they are
+                                                               USRES
+                                                                 |
+                                                                 |
+                                          ------------------------------------------------
+                                         |                       |                        |
+                                         |                       |                        |
+                                       ROOT                  NORMAL USER              SYSTEM USER
+                                     ROOT USER               human beings                                    
+                                     super user
+                                     owner user
+ROOT USER (or) OWNER USER::
+-----------------------------
+----->For the root user or owner user we need USER IDENTIFICATION
+
+user information ::
+    i)filename : /etc/passwd
+   ii)filename : /etc/shadow
+1) /etc/passwd :
+------------------
+username
+userID
+GroupID
+full name 
+shell
+
+NORMAL USER::  ------> 1000 - 65536
+-------------- 
+----->For the Normal user we need a team 
+----->for the team we need to supply 
+-----> we need to give minimum rights
+----->we need to access to work behalf of ""root"" 
+
+SYSTEM USER::
+---------------
+-----> to run the services only   -------> 1 - 999
+
+[root@server01~]#useradd<username>       ###adduser also fine
+[root@server01~]#passwd<username>
+the above commands stores in the text file only.
+
+SHADOW FILE:
+-------------
+        ***The shadow file in Linux is a system file that stores encrypted password information for user.
+
+Key Features of the Shadow File:
+----------------------------------
+Location: -----------> It is typically located at /etc/shadow.
+Access Permissions: ------>Only the root user can read or modify it.
+Contents: ----------> Each line in the shadow file corresponds to a user account, with fields separated by colons (:).
+
+fields in the Shadow file:
+--------------------------
+              Field	                                                        Description
+           ----------                                                       	--------------------
+           username	                                       The username associated with the account.
+           password_hash	                               The encrypted (hashed) password. If it contains ! or *, the account is locked.
+           last_change	                                       Days since Jan 1, 1970, when the password was last changed.  
+           min_days	                                       Minimum number of days before a password can be changed.
+           max_days	                                       Maximum number of days a password is valid before the user must change it.
+           warn	                                               Number of days before expiration to warn the user about an expiring password.
+           inactive	                                       Number of days after password expiration before the account becomes inactive.
+           expire	                                       Absolute date (in days since Jan 1, 1970) when the account will expire. A blank value means no expiration. 
+
+
+password contains ::
+---------------------
+     ***username:encrypted passwd link character(x): User ID(UID):Group ID(GID):comment line:home directory: shellname
+
+shadow files contains ::
+-------------------------
+     *** user name and passwd
+
+user management commands::
+--------------------------
+create an user use commands:
+----------------------------
+sudo useradd username -------------> create new user 
+sudo passwd username ---------------> for the created user we need to setup some password by using this command
+sudo useradd -m -s /bin/bash username --------> by creating user we can add some additional options 
+                 *** -m ---->creates a home directory for the user
+                 *** -s ----> specifies the user's default shell
+
+modification of the users ::
+----------------------------
+sudo usermod -d /new/home/directory username ---------> changing the user home directory
+sudo usermod -s /bin/zsh username -----> change the user login shell
+sudo usermod -aG groupname username --------> adding user to a group
+
+deleting groups ::
+------------------
+sudo userdel username -------> to delete an user
+sudo userdel -r username -----> delete the user and their home directory also
+
+managing groups::
+-----------------
+sudo groupadd groupname ---------> create a group
+sudo groupdel groupname ---------> deletion of group
+sudo usermod -aG groupname username -----> adding an user to the group
+
+Access control list(ACL's) to the users::
+------------------------------------------
+getfacl filename --------> viewing the ACL's 
+setfacl -m u:username:r-- filename -------> setting the Access Control List's
+
+Lock and Unlock the users::
+---------------------------
+sudo usermod -L username ---------> to lock the user accounts
+sudo usermod -U username ---------> to unlock the user accounts
+
+FILE PERMISSIONS::
+------------------
+          **** file permissions determine who can ""read, write, or execute" a file or directory.
+           
+file permission structure:
+----------------------------
+
+-----> Owner: The user who owns the file or directory.
+-----> Group: A group of users who share the same permissions.
+-----> Others: All other users on the system.
+                    
+       ***permissions are represented in the 10- characters --------> -rwxr-xr--
+                                       r ::: read ------>  View the contents of the file or directory. 
+                                       w ::: write -----> Modify the file or directory.
+                                       x ::: execute----> Run the file as a program or access the directory.
+
+     *** These characters indicates the type of a file ::
+              - : regular file 
+              d : directory file
+              l : symbolic link
+              c : character device
+              b : block device
+    
+           ***the above 5 characters are known as the ""first character""
+
+the remaining 9 characters are  :: 
+            **Owner permissions (characters 2,3,4): rwx
+              Group permissions (characters 5,6,7): r-x
+              Other permissions (characters 8,9,10): r--
+
+NUMERICAL REPRESENTATION PERMISSIONS ::
+----------------------------------------
+           ** 4: Read (r)
+           ** 2: Write (w)
+           ** 1: Execute (x)
+           ** 0: No permission (-)
+
+Examples for numerical permissions:
+-----------------------------------
+             rwx = 4 + 2 + 1 = 7
+             rw- = 4 + 2 + 0 = 6
+             r-- = 4 + 0 + 0 = 4
+
+Permissions for a file are set as a three-digit number:
+               ** First digit: Owner permissions.
+               ** Second digit: Group permissions.
+               ** Third digit: Others' permissions.
+
+ls -l  ----------- > to view the file permissions
+
+-rw-r--r-- 1 owner group 1234 Dec 10 12:34 file.txt  -------> output of the command 
+                 ::::: -rw-r--r--: File type and permissions.
+                 ::::: owner: File owner.
+                 ::::: group: File group.
+
+MODIFYING FILE PERMISSIONS :: 
+-----------------------------	
+
+chmod [who][operation][permissions] file -----> Permissions can be changed using the ""chmod"" command.
+            *** Who: u (owner), g (group), o (others), a (all).
+            *** Operation: + (add), - (remove), = (set exactly).
+            *** Permissions: r, w, x.
+
+example of modifying permissions::
+----------------------------------
+  chmod u+rwx,g+rx,o-r file  ----------> modifying a text file
+  chmod 755 file  --------> modifying a numerical file
+
+sudo chown owner file  -----> Change owner: "" chown "" using these command we can change the ownership
+
+sudo chgrp group file ------> change group: "" chgrp ""using this command we can change the group 
+
+
+GROUP MANAGEMENT::
+------------------
+       **** Group management in Linux allows administrators to organize and manage users who need shared access to files, directories, and resources. 
+
+there are three groups are there. they are 
+
+        1)Group :
+                   A collection of users with shared access rights.
+        2)Primary Group:
+                   Assigned to a user by default.
+                   Files created by the user are associated with this group.
+        3)Secondary (Supplementary) Groups:
+                   Additional groups that a user is a member of.
+                   Used for granting additional permissions
+
+----> Create a Group
+Command: groupadd
+Syntax: sudo groupadd groupname
+example : sudo groupadd developers  ------> developers is the group name
+
+------->Delete a Group
+Command: groupdel
+Syntax: sudo groupdel groupname
+Example: sudo groupdel developers
+
+Add a User to a Group
+Command: usermod
+Syntax: sudo usermod -aG groupname username
+Example: sudo usermod -aG developers alice    ----> developers is the group name ---->alice is the username
+
+Remove a User from a Group
+Command:  gpasswd or manual editing.
+Syntax: sudo gpasswd -d username groupname
+Example:  sudo gpasswd -d alice developers
+
+Change a User's Primary Group
+Command:  usermod
+Syntax:  sudo usermod -g groupname username
+Example:  sudo usermod -g developers alice
+
+View Groups a User Belongs To
+Command: groups  -------------> group name 
+Syntax:  groups username  
+Example:  groups alice
+
+Syntax:  id username -----> group id
+Example:  id alice
+
+Change Group Ownership of a File
+Command: chgrp
+Syntax:  sudo chgrp groupname filename
+Example: sudo chgrp developers project.txt
+
+Change Permissions for Group Members
+Command:   chmod
+Syntax:   chmod g+rw filename
+Example:   chmod g+rwx project.txt
+
+Set Group as Default for a Directory
+Command: chgrp + chmod with the setgid bit.
+Syntax:  sudo chgrp groupname directory
+             chmod g+s directory
+Example:  sudo chgrp developers /shared
+            chmod g+s /shared
+
+Change Group Password (Rarely Used)
+Command: gpasswd
+Syntax:  sudo gpasswd groupname
+Example:  sudo gpasswd developers
+
+Managing Groups Using /etc/group
+       ***The /etc/group file contains group definitions in the format:
+          groupname:x:GID:user1,user2,...
+                                                       groupname ------------>Name of the group.
+                                                       x --------------->Placeholder for group password (rarely used).
+                                                       GID: Group ID.
+                                                       user1,user2,...: ----->List of members in the group.
+Example:   developers:x:1001:alice,bob
+
+sudo vigr ----------> ""vigr"" to safely edit the /etc/group file:
+
+cat /etc/group  -------> List all groups on the system
+
+
+
+special permissions ::
+-------------------------- 
+         *** Special permissions in Linux provide additional control over file execution and directory access.
+         These include ""Setuid"", ""Setgid"" and the ""Sticky Bit"".
+
+1) Setuid (Set User ID)::
+-------------------------
+              ***Purpose: Allows a file to execute with the permissions of its owner, regardless of who runs it.
+              Use Case: Commonly used for executable files that require elevated privileges, such as passwd for changing user passwords.
+Representation:   ("s") ----> replaces the execute ("x") bit for the owner in the file's permission string.
+
+Command to Set the user ID: ----> chmod u+s file
+numerically set the user ID : ----> chmod 4755 file
+
+Example: -rwsr-xr-x
+
+2) Setgid (Set Group ID) ::
+--------------------------------
+              ***On files: Ensures the file runs with the group ownership of the file.
+              ***On directories: New files and subdirectories inherit the group ownership of the parent directory.
+                  Use Case: Used in collaborative environments where users share directories.
+Representation: (""s"") replaces the execute (""x"") bit for the group in the permission string.
+
+Command to Set: ----------> chmod g+s file_or_directory
+numerically: ---------------> chmod 2755 file_or_directory
+
+Example: -rwxr-sr-x (file), drwxr-sr-x (directory).
+
+3) Sticky Bit::
+----------------
+              *** Prevents users from deleting or renaming files they do not own in a shared directory.
+                  Commonly used on directories like ""/tmp"" to maintain a shared space while ensuring file security.
+Symbolic: (""t"") replaces the execute (""x"") bit for others in the permission string of a directory.
+
+Command to Set: ------> chmod +t directory
+numerically: -------> chmod 1755 directory
+
+4)Combining Special Permissions::
+-----------------------------------
+                ***Special permissions can be combined with standard permissions. 
+For example:
+--------------
+chmod 4755 file: Sets Setuid with rwxr-xr-x.
+chmod 2755 directory: Sets Setgid with rwxr-sr-x.
+chmod 1777 directory: Sets Sticky Bit with rwxrwxrwt.
+
+Summary of Numeric Values for Special Permissions::
+-----------------------------------------------------
+                     Permission	                 Octal Value
+                    ---------------            ----------------
+                       Setuid	                       4
+                       Setgid	                       2
+                       Sticky Bit	               1
+When combined with regular permissions, these values are added as the leading digit:
+                4755: Setuid + rwxr-xr-x
+                2755: Setgid + rwxr-xr-x
+                1755: Sticky Bit + rwxr-xr-x
+
+DISK_MANAGEMENT ::
+-------------------
+            *** data management refers to the process of storing, organizing, accessing, and securing data 
+                        efficiently using tools, file systems, and commands like cp, mv, rsync, and tar.
+
+Checking Disk Information::
+----------------------------
+List block devices ----------->lsblk
+Show detailed disk partitions ---------> sudo fdisk -l
+Disk usage statistics -----------> df -h
+Monitor disk I/O activity ---------> iostat
+
+
+Partition a Disk ::
+----------------------
+Launch fdisk to manage partitions -------->sudo fdisk /dev/sdX
+
+Replace /dev/sdX with the target disk (e.g., /dev/sdb).
+            n: Create a new partition.
+            d: Delete a partition.
+            p: Print the partition table.
+            w: Write changes and exit.
+Using parted ----------->sudo parted /dev/sdX
+Create a new partition table -----------> mklabel gpt
+Create partitions --------------> mkpart primary ext4 0% 50%
+
+Format Partitions::
+------------------
+Format with ext4 ---------> sudo mkfs.ext4 /dev/sdX1
+
+Format with other file systems:
+          NTFS: sudo mkfs.ntfs /dev/sdX1
+          FAT32: sudo mkfs.vfat /dev/sdX1
+
+Mount and Unmount Partitions::
+-------------------------------
+Mount a partition --------------> sudo mount /dev/sdX1 /mnt
+Unmount a partition ------------>sudo umount /mnt
+Make mount persistent -------------->Edit /etc/fstab:
+
+EXAMPLE::
+------------
+echo '/dev/sdX1 /mnt ext4 defaults 0 0' | sudo tee -a /etc/fstab
+
+Check Disk Health::
+--------------------
+Check disk errors ---------- >sudo fsck /dev/sdX1
+Monitor disk health using SMART
+         ---------->sudo apt install smartmontools  # Install SMART tools
+         ---------->sudo smartctl -a /dev/sdX       # Check disk health
+
+Resize Partitions::
+------------------
+Use parted for resizing --------> sudo parted /dev/sdX
+                        --------> resizepart 1 50GB
+Resize file system after resizing partition ---------> sudo resize2fs /dev/sdX1
+
+Disk Usage Monitoring ::
+-------------------------
+Check usage by directory ---------> du -sh /path/to/directory
+List disk space usage -------> df -h
+
+RAID Management ::
+-------------------
+Install RAID tools --------------> sudo apt install mdadm
+Create a RAID array -------------> sudo mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sdX /dev/sdY
+Monitor RAID status -------------> cat /proc/mdstat
+
+Backup and Restore::
+---------------------
+Backup a disk -------------> sudo dd if=/dev/sdX of=/path/to/backup.img
+Restore a disk ------------> sudo dd if=/path/to/backup.img of=/dev/sdX
+
+GUI-Based Disk Management::
+-----------------------------
+Install GParted ------------> sudo apt install gparted
+Launch and manage partitions ----------> sudo gparted
+
+DISK(GPT)::
+------------
+            ****disk GPT refers to the ""GUID Partition Table (GPT)"", a standard for disk partitioning that is part of the ""UEFI (Unified Extensible Firmware Interface)"" specification.
+                GPT is an advanced alternative to the older ""Master Boot Record (MBR)"" partitioning scheme and offers several advantages.
+
+Key Features of GPT::
+---------------------
+        1) Supports Large Drives:
+          --------------------------
+                 * GPT can support disks larger than 2 TB, which is the limit for MBR.
+                 * It uses 64-bit logical block addressing (LBA), allowing for much larger disk sizes.
+        2) Unlimited Partitions:
+          ----------------------
+                 * GPT supports up to 128 primary partitions (with no concept of extended/logical partitions, unlike MBR).
+                 * The actual number depends on the operating system and partitioning tool.
+        3) Redundancy:
+        ---------------
+                 * GPT stores a backup of the partition table at both the beginning and the end of the disk for redundancy.
+        4) CRC32 Error Checking:
+        -------------------------
+                 * The partition table includes a checksum to detect corruption, making GPT more reliable.
+        5) Globally Unique Identifiers (GUIDs):
+        ----------------------------------------
+                 * Each partition and the disk itself have unique identifiers, which are useful for identifying devices unambiguously.
+        6) Compatibility:
+        ------------------
+                 * While GPT is primarily used with UEFI, most Linux systems can handle GPT on legacy BIOS as well.
+
+Tools to Manage GPT in Linux::
+--------------------------------
+            **gdisk: GPT-specific partitioning tool (similar to fdisk for MBR).
+            **parted: General partitioning tool supporting both GPT and MBR.
+            **lsblk: Lists information about block devices and their partitions.
+            **blkid: Prints block device attributes, including GPT identifiers.
+            **gparted: GUI-based partition manager supporting GPT.
+
+Checking GPT Partitions
+To check if a disk uses GPT in Linux ------------- >sudo parted /dev/sdX print
+                                     ------------- >sudo gdisk -l /dev/sdX
+Replace /dev/sdX with the device name of your disk (e.g., /dev/sda)
+
+SWAP_DISK_PARTITION::
+---------------------
+          ***A swap partition in Linux is used as virtual memory when the system's physical RAM is full. 
+             Swap allows the system to offload less-used memory pages from RAM to the disk, enabling processes to continue running.
+
+commands of swap disk partition:
+----------------------------------
+
+lsblk ------------> to check the available disks and partitions
+
+
+Create a Swap Partition::
+-----------------------------
+Use ""fdisk"" or ""parted"" to create a partition:
+
+Using fdisk ------------>sudo fdisk /dev/sdb
+Create a new partition:
+-----------------------
+
+                 **Press n for a new partition.
+                   Choose the partition type (default is fine).
+                   Specify the size (e.g., +4G for a 4GB swap).
+                   Save changes by pressing w.
+Set the partition type to swap ------------> sudo fdisk /dev/sdb
+
+sudo mkswap /dev/sdb1 -----------> format the partition we created
+
+Enable the Swap Partition::
+---------------------------
+Activate the swap partition ---------------> sudo swapon /dev/sdb1
+Verify the swap is active ---------------->sudo swapon --show
+                          ---------------->free -h
+
+Make Swap Permanent::
+------------------------
+Edit the /etc/fstab file ------------> sudo nano /etc/fstab
+Add an entry for the swap partition -------------->/dev/sdb1 none swap sw 0 0
+
+
+Removing a Swap Partition::
+----------------------------
+Turn off the swap ------------ >sudo swapoff /dev/sdb1
+
+Reformat the partition (optional): If you want to reuse the partition for another purpose, reformat it ----------> sudo mkfs.ext4 /dev/sdb1
+
+LVM (Logical Volume Manager):::
+--------------------------------
+          ***LVM is a flexible and powerful system for managing disk storage.
+             This makes it easier to manage partitions, especially in environments where storage requirements frequently change.
+
+Key Components of LVM::
+------------------------
+               1) Physical Volumes (PVs):
+               ---------------------------
+                        * These are raw physical storage devices (like disks or partitions) initialized for LVM.
+                        * Example: /dev/sda1, /dev/sdb
+               2) Volume Groups (VGs):
+                -----------------------
+                        * A collection of physical volumes pooled together to create a single storage unit.
+                        * Acts as the storage container for logical volumes.
+                        * Example: vg_data
+               3) Logical Volumes (LVs):
+              ---------------------------
+                        * Created from a volume group and act like partitions.
+                        * These are the storage units that can be formatted with a filesystem and mounted.
+                        * Example: /dev/vg_data/lv_home
+               4) Logical Extents (LEs):
+               --------------------------
+                        * Logical Volumes are divided into chunks called extents. Each extent maps to a Physical Extent (PE) on the physical volume.
+
+Benefits of LVM::
+-----------------
+
+     **Dynamic Resizing: Logical volumes can be resized without unmounting them (resize2fs for ext filesystems, xfs_growfs for XFS).
+     **Snapshots: You can create snapshots for backups or testing.
+     **Striping and Mirroring: Spread data across multiple disks for performance or redundancy.
+     **Ease of Management: Combine multiple disks or partitions into one logical unit.
+     **Flexibility: Add or remove storage devices to/from the volume group dynamically.
+
+Commands of LVM::
+---------------------
+
+pvcreate /dev/sdX   ----------------> initializing physical volume
+
+vgcreate vg_name /dev/sdX ------------> creating volume group
+
+lvcreate -L [size] -n lv_name vg_name ------------> creating a logical volume
+           example ------ >lvcreate -L 10G -n lv_home vg_data     
+     
+mkfs.ext4 /dev/vg_name/lv_name ---------------> formatting the logical volume
+           example ------ > mount /dev/vg_name/lv_name /mountpoint
+  
+Useful LVM Commands:::
+---------------------
+       Display Information:
+       --------------------
+               pvs: List physical volumes.
+               vgs: List volume groups.
+               lvs: List logical volumes.
+
+Extend the logcal volumes --------> lvextend -L+[size] /dev/vg_name/lv_name
+                          --------> resize2fs /dev/vg_name/lv_name  # For ext filesystems
+
+Reduce the logical volumes -------> lvreduce -L-[size] /dev/vg_name/lv_name
+                                    resize2fs /dev/vg_name/lv_name  # For ext filesystems
+
+
+
+removing the volumes -----> lvremove /dev/vg_name/lv_name
+removing the volume groups -------> vgremove vg_name
+removing the physical volumes -------> vgremove vg_name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        

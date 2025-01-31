@@ -1,0 +1,115 @@
+PAAS SERVICES ---> Az-204 ----> developing solutions for Microsoft azure Integration
+------------------------------------------------------------------------------------
+compute services/serverless services
+------------------------------------
+web apps
+function app
+logic app
+ACR/ACI 
+
+storage account
+----------------
+container/blob
+Queues
+tables
+file share
+Cosmos DB
+
+Azure Secure cloud solutions
+------------------------
+key vault services 
+Authentication
+authorization
+manager Identity
+
+
+trouble shooting solutions
+--------------------------
+monitoring
+app insights 
+radius
+cache
+
+
+message based solutions
+-----------------------
+service bus
+    queues 
+    topics
+
+
+event based solutions
+------------------------
+event grid
+event hub
+
+Integration solutions
+---------------------
+APIM 
+logic app
+service bus
+
+containerized solutions
+--------------------------
+ACR ----> azure Container Registry
+ACI ----> Azure Container Instance
+
+
+IAAS --->Az-104  ----> Microsoft Azure Administrator
+----------------------------------------------------
+
+Microsoft Entra ID::/ identities and governance
+------------------------------------------------
+service principle
+user
+groups
+RBAC ----> Role Based Access Control
+Access control (IAM)
+
+compute services:
+------------------
+Virtual machines
+web apps 
+function app     ##### adding VM's for these four services
+logic app
+ACR/ACI     
+
+storage account::
+----------------
+container/blob
+Queues
+tables
+file share
+Cosmos DB
+
+networking::
+-----------
+Virtual network
+Inter site connectivity
+traffic management
+
+monitoring::
+------------
+monitor and maintain resources
+data protection 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

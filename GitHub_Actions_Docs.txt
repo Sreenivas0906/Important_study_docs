@@ -1,0 +1,31 @@
+What is GitHub Actions ?
+      ** A workflow that Automation service by GitHub.
+What id CI/CD ?
+      ** CI ------> Continuous Integration
+      ** CD ------> Continuous Delivery / Continuous Deployment
+  * CI ----- > Code changes are automatically built , tested and merged with existing codes.
+  * CD ----- > After Integration new apps are package versions are published automatically.
+  * Code and Repository management -----> Automate code reviews , issues management.
+
+What is Git? 
+  ** Git is a Free Version Control System.   --------- > managing source code changes .
+     * With Git we can easily roll back to older code snapshots or develop new features without breaking a production code.
+     * Git saves the code to snapshots(" Commits") .
+     * Git works with alternative code versions("Branches").
+     * Git moves between branches and commits("Checkout").
+
+git init    ========> Initializing an Empty repository (required once in a project)
+git add <file name> ===> Stage the code to changes (For the next commit)
+git commit -m ("___") =====> create a commit for the staged change (with a message)
+git status ========> get the current repository status (which changes are staged)
+git log ======> output an order list of commits
+git checkout <id> ========> temporarily move back to commit <id> 
+git revert <id> ==========> Revert the changes of commit <id> ( by creating a new commit)
+git reset <id> ==========> undo commits up to commit (by deleting commits)
+
+What is GitHub ?
+  ** A cloud git repository and service provider. -------> store and manage Git repositories.
+     * Cloud git repository storage (" Pull and Push").  ------> manages the private and public team managements.
+     * code management and collaborative developments.  -------> via ("issues , projects , pull requests(PR))" 
+     * Automation Services like CI/CD  -------> GitHub Actions , GitHub Apps and more.
+

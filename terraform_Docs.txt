@@ -1,0 +1,329 @@
+what is terraform? ----> Terraform is an infrastructure as a code (IaC), tool that allows to build , change , and version infrastructure safely and efficiently
+
+Terraform is developed by Hashicorp
+
+terraform download ---> go to website and download terraform 
+                        open the downloaded file
+                        make the file to unzip
+                        go to env variables and select the new path and paste the path
+                        then run "terraform --version" command 
+
+
+terraform is a multi cloud provider. ex --> Azure, AWS, Google, Kubernetes, Alibaba cloud, VMware and etc......
+
+Terraform Components:
+1)Providers
+2)Resources
+3)Variables
+4)Statefile
+5)provisioners
+6)Backend
+7)Modules
+8)Data Sources
+9)Service Principals
+10)output
+11)locals
+12)workspace
+
+1)PROVIDERS: Terraform relies and plugins called "providers" to interact with cloud providers SaaS providers and other API's
+-------------        provider will support multiple clouds like AWS ,Azure ,google
+providers code:
+-----------------
+terraform {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "4.10.0"
+    }
+  }
+}
+provider "azurerm" {
+  # Configuration options
+features {}
+subscription_id = "   "
+  tenant_id = "   "
+  client_id = "  "
+  client_secret = "  "
+}
+
+
+2)RESOURCES: resources are the most important elements in the terraform language. each resource block describes one or more infrastructure objects.
+-------------                                                  ex--->virtual networks compute instances or high level components like DNS records.
+code for resources:
+-------------------
+resource "azurerm_resource_group" "type of resource" {
+  name     = "example"    ## name of the resource  
+  location = "example"    ## location of resource
+}
+
+example---> resources group
+
+resource "azurerm_resource_group" "resource_group" {
+  name     = "q-rg"            ## name and location = keys  ###  q-rg and East us == values
+  location = "East us"
+}
+
+3)VARIABLES : Using Variables in terraform configurations makes our deployments more dynamic.
+-----------         A separate file name "variables.tf" needs to be created in the working directory to store all variables for our used in "main.tf" file
+
+A variable in Terraform is a way to: ------>Make your code dynamic: You can change inputs without editing the main code.
+                                     ------>Reuse configurations: Use the same code for different environments (like dev, test, or prod).
+
+code for variables:
+--------------------
+variable "system" {
+  type = string        ## variables like: list , bool , set(),tuple, number.
+  description = "name of the env or name of system"
+}
+
+variable "location" {
+  type = string
+  description = "location of system env"
+  default = "location of system"     ## like: east us, uksouth, west us.
+  
+}
+
+4)STATEFILE: After the Deployment is finished terraform creates a statefile to keep the track of current state of the infrastructure.
+-------------    *** A file with the name of terraform.tfstate will be created in our working directory
+               *** we can use this file to compare the when we deploy or destroy resources it compares the "current state" with the "desired state"  using the statefile.
+
+
+5)PROVISIONERS: provisioners provide the ability to run additional steps or tasks when a resource is created or destroyed.
+---------------    ***this is not for a configuration management tool
+
+code for provisioners:
+----------------------
+FILE PROVISIONER
+------------------
+provisioner "file" {
+  source = "./script.ps1"
+  destination = "./temp/setup.ps1"
+
+  connection {
+    type  =  " "
+    user = "  "   ### user name 
+    password = "  "  ### user password
+    host = "  "    ### hostname
+  }
+}
+
+LOCAL EXEC PROVISIONER:
+-----------------------
+  provisioner "local-exec" {
+    command = "echo Resource Group ${self.name} created in location ${self.location}"
+  }
+}
+
+Example for local-exec:
+-----------------------
+resource "azurerm_resource_group" "example" {
+  name     = "example-rg"
+  location = "East US"
+
+REMOTE-EXEC PROVISIONERS:
+--------------------------
+ provisioner "remote-exec" {
+    connection {
+      type        = "ssh"
+      user        = "adminuser"
+      private_key = file("~/.ssh/id_rsa")
+      host        = azurerm_network_interface.example.private_ip_address
+    }
+
+Provisioner	                                Description	                                                  Typical Use Case
+------------                                   ---------------                                                   ---------------------
+Local-Exec	                        Runs commands locally on the host machine	    Running Azure CLI commands, triggering pipelines, logging actions.
+File	                                Uploads files to a remote VM	                    Sending configuration files, custom scripts, or assets to the VM.
+Remote-Exec	                        Executes remote commands on the VM	            Installing software, configuring resources, and running bootstrap scripts.
+
+
+RESTORING STATEFILE: If the state file is deleted or corrupted we can restore it using the "terraform import" command.
+--------------------
+  *** terraform import <terraform resource name> <resource id>
+
+TERRAFORM IMPORT:  Terraform can import existing infrastructure resources. This functionality lets you bring existing resources under Terraform management.
+------------------  
+ command for terraform import ------> terraform import azurerm_resource_group.example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1
+ example for resource group ------> terraform import azurerm_resource_group.test-Rg /subscriptions/1a5fe3bb-b02d-48b7-bdbd-729be4f85060/resourceGroups/test-Rg
+ example for Vnet ---------> terraform import azurerm_virtual_network.test-Vnet /subscriptions/1a5fe3bb-b02d-48b7-bdbd-729be4f85060/resourceGroups/test- 
+                                                                                           Rg/providers/Microsoft.Network/virtualNetworks/test-Vnet
+
+REMOTE BACKEND OR REMOTE STATEFILE: 
+----------------------------------- 
+---->first we have to create a storage account and then we have to create a container.
+---->go to browser and search "Azurerm backend"
+---->there are many ways to access the backend
+---->In that we have to take ""Data Source: Access Key Direct""
+----> we have to copy the code and we have to paste in our provider code
+----> we have to change values according to our storage account
+---->in storage account we should go to ""security + management""
+----> In that we should go to ""Access keys""
+----> In that we should copy the ""keys URL"" and paste in the ""provider"" code.
+
+MODULES:
+---------
+*** If you want to perform a template based deployment we can follow modularized  approach
+*** A module defines set of parameters which will be passed to key value pairs to actual deployment With the help of modules we can create multiple environments in easy way
+
+BENIFITS OF MODULES:
+-------------------
+---->Code Reusability: Write once, use in multiple deployments.
+---->Simplification: Abstract complex resource creation logic.
+---->Consistency: Standardize deployments across environments.
+---->Scalability: Easily scale and extend your infrastructure.
+
+FOLDER STRUCTURE OF MODULE:
+----------------------------
+
+modules/
+  storage_account/
+    main.tf
+    variables.tf
+    outputs.tf
+
+example for modules : storage_account
+--------------------- 
+
+resource "azurerm_storage_account" "example" {
+  name                     = var.storage_account_name
+  resource_group_name      = var.resource_group_name
+  location                 = var.location
+  account_tier             = var.account_tier
+  account_replication_type = var.account_replication_type
+
+  tags = var.tags
+}
+
+declaration of variables in modules:
+-------------------------------------
+
+variable "storage_account_name" {}     *** storage_account_name 
+variable "resource_group_name" {}      *** resource_group_name
+variable "location" {}                 ***resource_group_location
+variable "account_tier" {              ***account_tier
+  default = "Standard"
+}
+variable "account_replication_type" {  ***account_replication_type
+  default = "LRS"
+}
+variable "tags" {                      ***defining tags
+  default = {}
+}
+
+
+DATA SOURCES:
+-------------
+**** Azure data sources are used to query and retrieve information about existing resources in an Azure subscription,
+      enabling dynamic configurations and dependencies in your infrastructure code. 
+
+Structure for Data_Sources:
+---------------------------
+
+provider "azurerm" {
+  features = {}
+}
+
+# Data source to fetch details of an existing resource group
+data "azurerm_resource_group" "example" {
+  name = "my-resource-group"
+}
+
+# Use the resource group's data
+resource "azurerm_virtual_network" "example" {
+  name                = "example-vnet"
+  location            = data.azurerm_resource_group.example.location
+  resource_group_name = data.azurerm_resource_group.example.name
+  address_space       = ["10.0.0.0/16"]
+}
+
+
+LOCAL_VARIABLES OR LOCALS :
+----------------------------
+*** locals are used to define named expressions or constants that simplify your configurations by reducing repetition and 
+                     improving readability. These local values are computed once and can be referenced throughout your Terraform configuration.
+
+syntax for locals
+-------------------
+locals {
+  <name> = <expression>
+}
+
+example for locals
+-------------------
+
+provider "azurerm" {
+  features = {}}
+
+# Define locals
+locals {
+  location        = "East US"
+  environment     = "dev"
+  resource_prefix = "myapp"
+  tags = {
+    environment = local.environment
+    owner       = "team-x"
+  }
+}
+
+# Create a Resource Group
+resource "azurerm_resource_group" "example" {
+  name     = "${local.resource_prefix}-rg"
+  location = local.location
+  tags     = local.tags
+}
+
+
+WORKSPACES:
+-----------
+ ***an Azure workspace isolates state files for different environments (e.g., dev, test , prod) within a single Terraform configuration,
+                              enabling independent management of resources.
+
+COMMANDS FOR WORKSPACE:
+----------------------
+*****Create a new workspace--------->  terraform workspace new <workspace_name>
+Example:  terraform workspace new dev     ###dev --> name of the workspace
+
+*****Switch to an existing workspace ------->  terraform workspace select <workspace_name>
+Example:  terraform workspace select prod   ### prod ----> existing workspace
+
+*****List all workspaces -------->  terraform workspace list
+*****Show the current workspace -------->  terraform workspace show
+*****Delete a workspace (requires terraform state operations to clean up) ------- >  terraform workspace delete <workspace_name>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,315 @@
+1) What is Terraform?
+Ans) Terraform is an open-source tool for automating and managing infrastructure using code.
+
+2) Why you should use Terraform?
+Ans) it simplifies infrastructure management by allowing you to define and automate resource provisioning and updates as code.
+         i) Multi-Cloud Support
+         ii)Infrastructure as Code (IaC)
+         iii)Scalability and Automation
+         iv)State Management
+
+3)What do you mean by Terraform init?
+Ans) terraform init is the command used to initialize a Terraform working directory. It sets up the necessary configurations,
+ downloads provider plugins, and prepares the environment to execute Terraform commands like plan or apply.
+ Essentially, it's the first step to start using Terraform in a project.
+
+4)Name some major competitors of Terraform.
+Ans)AWS CloudFormation
+Pulumi
+packer
+cloud foundary
+Ansible
+kunernetes
+Chef and Puppet
+Google Cloud Deployment Manager
+Azure Resource Manager (ARM) Templates
+
+5)What is a Terraform provider?
+Ans)  A provider is responsible for API interactions that are thoughtful and reveal resources. Terraform is compatible with a wide range of cloud providers.
+
+6)What are the features of Terraform?
+Ans)Infrastructure as Code (IaC)
+Multi-Cloud Support
+State Management
+Resource Graphs
+Execution Plans
+Modules and Reusability
+Provisioning Automation
+Extensibility with Providers
+Change Automation
+
+7) What do you mean by IaC?
+Ans) IaC is a short form to the term “Infrastructure as Code”. IaC refers to a scheme whereby developers can run and provision 
+the computer data center mechanically instead of getting into a physical process. Terraform IAC, for example, is a case tool of IAC.
+
+8) What are the key features of Terraform?
+Ans)Infrastructure as Code (IaC)
+Multi-Cloud and Multi-Platform Support
+Execution Plans
+State Management
+Resource Dependency Graphs
+Extensibility with Providers
+Modular and Reusable Configurations
+Immutable Infrastructure
+Open Source and Community Support
+
+9)What are the use cases of Terraform?
+Ans)Multi-Cloud Infrastructure Management
+Infrastructure as Code (IaC)
+Automating Infrastructure Provisioning
+Environment Replication
+Self-Service Infrastructure for Teams
+Infrastructure Scaling
+Disaster Recovery and High Availability
+Cost Optimization
+
+10)How to check the installed version of Terraform?
+Ans) terraform --version
+
+11)What are the most useful Terraform commands?
+Ans)-------->terraform init
+Initializes a Terraform configuration, downloading the required provider plugins and preparing the environment for further commands​
+----------->terraform plan
+Shows a preview of the actions Terraform will take based on the current configuration. It's useful for validating changes before applying them​
+---------->terraform apply
+Executes the changes outlined in the plan, applying the configuration to the infrastructure​
+----------->terraform validate
+Validates the syntax and structure of the configuration files to ensure they are correct​
+------------>terraform show
+Displays the current state or plan of resources managed by Terraform​
+------------->terraform destroy
+Destroys the resources managed by the current configuration, useful for cleanup or tear-down​
+------------->terraform fmt
+Automatically formats Terraform configuration files to ensure consistent code style​
+
+12)How does Terraform help in discovering plugins?
+---->Provider Block in Configuration
+---->Automatic Download
+---->Version Constraints:
+---->Discovery from the Registry:
+---->Modularized Architecture:
+
+13)Define Modules in Terraform.
+---->Reusability: Define configurations once and use them across different Azure projects.
+---->Consistency: Maintain standard configurations for Azure resources.
+---->Scalability: Quickly replicate infrastructure patterns in different Azure regions or environments.
+---->Flexibility: Use inputs and outputs to customize configurations based on project needs.
+
+14)What do you mean by Terraform Cloud?
+----->Remote State Management:
+----->Workspaces:
+----->Collaboration and Governance:
+----->Execution Environment:
+----->Version Control Integration:
+----->Cost Estimation:
+----->API and CLI Access:
+
+15)Define null resource in Terraform.
+In Terraform, a null resource is a placeholder resource that doesn’t create any real infrastructure. 
+It’s used to perform tasks like running scripts or managing dependencies between resources using provisioners or triggers.
+---->Triggers:
+You can use the triggers argument to define when a null resource should be recreated. These triggers can depend on the output or state of other resources.
+----->Local Execution:
+It can work with provisioners (like local-exec or remote-exec) to run commands or scripts locally or on a remote machine.
+----->Dependency Management:
+Helps manage complex dependencies between resources without creating physical infrastructure.
+
+16) List all the Terraform-supported versions
+---->GitHub.com
+---->GitLab.com
+---->GitHub Enterprise
+---->GitLab CE and EE
+---->Bitbucket Cloud and Server
+---->Azure DevOps Server and Services
+
+17) Mention some of the version control tools supported by Terraform.
+Version control tools supported by Terraform are:
+--->GitHub
+--->GitLab CE
+--->GitLab EE
+--->Bucket Cloud
+
+18) How would you recover from a failed apply in Terraform?
+--->You can save your configuration in version control and commit it before making any changes,
+and then use the features of your version control system to revert to an earlier configuration if necessary.
+You must always recommit the previous version code in order for it to be the new version in the version control system.
+
+19) What is State File Locking?
+--->State file locking in Terraform is a mechanism to prevent multiple users or processes from making simultaneous changes to the same Terraform state file. It ensures that changes to the infrastructure state are serialized, avoiding conflicts or corruption of the state file.
+Key Features:
+Locking Mechanism: Terraform locks the state file during operations (e.g., apply, refresh) to ensure only one operation modifies it at a time.
+Remote State Backends: Locking is supported by remote backends like S3 (with DynamoDB), Azure Blob Storage, and Terraform Cloud, which handle the locking automatically.
+Unlocking: The lock is released once the operation is complete. If an operation is interrupted, manual unlocking might be required using the terraform force-unlock command.
+Prevents Conflicts:By locking the state file, Terraform prevents issues like overwriting or inconsistent state updates when multiple users or CI/CD pipelines are involved.
+
+20)What is a Remote Backend in Terraform?
+----In Terraform, a remote backend in Azure refers to using Azure Storage as the backend to store the Terraform state file remotely. 
+Centralized State File: The Terraform state file is stored in an Azure Blob Storage container, enabling teams to access it from multiple locations.
+State Locking: By integrating with Azure's blob lease mechanism, Terraform ensures state file locking, preventing simultaneous operations from corrupting the state.
+Versioning: AZURE Storage supports blob versioning, which allows rollback to a previous state version if needed.
+Security: State files are stored securely with options for encryption (e.g., server-side encryption with Azure Key Vault).
+
+21) How to prevent Error Duplicate Resource
+------>It can be done in three ways depending on the situation and the requirement
+1) By deleting the resource, Terraform code will no longer manage it.
+2) By removing resources from APIs
+3) Importing action will also aid in resource elimination.
+
+22)Explain the workflow of the core terraform.
+-----> Terraforms core workflow has three steps:
+Write – Create infrastructure in the form of code.
+Plan – Plan ahead of time to see how the changes will look before they are implemented.
+Apply – Create a repeatable infrastructure.
+
+23) Differentiate between Terraform and Ansible.
+Feature	                                                              Terraform	                                                                         Ansible
+--------                                                             --------------                                                                     ------------
+Primary Purpose	                                   Infrastructure as Code (IaC) for provisioning resources	                    Configuration management, application deployment
+Approach	                                   Declarative: Defines desired end state	                                    Procedural: Defines step-by-step tasks
+State Management	                           Uses a state file to track the current state of infrastructure	            Does not maintain state, relies on target systems' 
+                                                                                                                                                                    current state
+Language	                                   HashiCorp Configuration Language (HCL) or JSON	                            YAML (Yet Another Markup Language)
+Execution Model	                                   Focuses on provisioning infrastructure resources                           	    Automates tasks and configurations on existing                                                                                                                                                                                                                                                                                                                                      
+                                                                               (create, modify, delete)                                                   infrastructure                                                                                
+Idempotency	                                   Idempotent by nature, ensures the same result with repeated runs	            Idempotent for each task, ensures no changes if the                                   
+                                                                                                                                                              desired state is met.
+Platform Support	                           Multi-cloud support (AWS, Azure, GCP, etc.)	                                    Works across cloud, on-premises, and hybrid environments
+Agent Requirement	                           No agents required, interacts with APIs	                                    Agentless (uses SSH or WinRM for communication)
+Use Cases	                                   Cloud infrastructure provisioning, resource management	                    Software installation, system configuration, application 
+                                                                                                                                                               deployment.
+Community and Ecosystem	                           Large ecosystem with providers for many cloud services	                    Extensive library of modules for configuration and
+                                                                                                                                                                  software management
+Rollback and History	                           Tracks changes via the state file, allows rollback	                            Limited rollback functionality without manual 
+                                                                                                                                                                       intervention
+Modularity	                                   Uses modules to create reusable, composable code	                            Uses roles and playbooks for reusable tasks and 
+                                                                                                                                                                configurations
+Integration	                                   Often used in conjunction with configuration tools like Ansible	            Can be used alongside provisioning tools like Terraform 
+                                                                                                                                                     for configuration management
+Example Use	                                   Provisioning EC2 instances in AWS	                                            Installing software or updating configuration files on  
+                                                                                                                                                                     virtual machines
+
+24) What is Terraform Directory?
+-----> Terraform Directory, which Terraform uses to manage cached provider plugins and modules, as well as
+to record which workspace is currently active and the last known backend configuration in case state needs to be migrated on the next run.
+
+25)What is a Private Module Registry?
+-----> Using the private module registry, Terraform Cloud users can create and confidentially share 
+infrastructure modules within an organisation. The private module registry in Terraform Enterprise allows you to share modules within or across organisations.
+
+26)Does Terraform support multi-provider deployments?
+-----> Terraform is a powerful tool in multi-provider deployments because it is not tied to a specific infrastructure 
+or cloud provider. You can manage all resources with the same set of configuration files, sharing variables and defining dependencies across providers.
+
+27)How is duplicate resource error ignored during terraform apply 
+----> To stop managing those resources, remove them from your Terraform code.
+Remove the resources from the API (cloud provider) and recreate them using Terraform.
+Terraform those resources and remove the terraform code that is attempting to recreate them.
+Use terraform apply —target=xxx to apply only the resources you require.
+
+28) What are Provisioners in Terraform?
+-----> Provisioners are used to execute scripts on a local or remote machine as part of resource creation or destruction. 
+Provisioners can be used to bootstrap a resource, cleanup before destroy, run configuration management, etc.
+
+29)What are some of the built-in provisioners available in Terraform?
+-----> Some of the built-in provisioners available in Terraform are:
+abspath.
+dirname.
+pathexpand.
+basename.
+file.
+fileexists.
+fileset.
+filebase64.
+
+30)What are the components of Terraform architecture?
+------> The Terraform architecture includes the following features:
+Sub-graphs
+Expression Evaluation
+Vertex Evaluation
+Graph Walk
+Graph Builder
+State Manager
+Configuration Loader
+CLI (Command Line interface)
+Backend
+
+31)  Define Resource Graph in Terraform.
+----> A resource graph is a graphical representation of the available resources. It enables the modification 
+and creation of independent resources at the same time. Terraform creates a plan for the graph’s configuration 
+in order to generate plans and refresh the state. It efficiently and effectively creates structure to help us understand the disadvantages.
+
+32)What are the various levels of Sentinel enforcement?
+Sentinel has three levels of enforcement: advisory, soft mandatory, and hard mandatory.
+----- >Advisory – Logged in but permitted to pass. When a user initiates a plan that violates the policy, an advisory is issued.
+------>Soft Mandatory – Unless an override is specified, the policy must be followed. Overrides are only available to administrators.
+------>Hard Mandatory – The policy must be implemented regardless. Unless and until this policy is removed, it cannot be overridden. Terraform’s default enforcement level is this.
+
+33)What is Terraform Core? Tell us some primary responsibilities of it
+---->Terraform Core is a binary written in the Go programming language and statically compiled. 
+The compiled binary provides Terraform users with an entry point. The primary responsibilities are as follows:
+
+Infrastructure’s code functionalities include module and configuration file reading and interpolation.
+Building a Resource Graph
+RPC-based plugin communication
+Plan implementation
+Resource state management
+
+34)How can you define dependencies in Terraform?
+---->You can use depends_on to declare the dependency explicitly. You can also specify multiple resources 
+in the depends on argument, and Terraform will create the target resource after all of them have been created.
+
+35)What is the external data block in Terraform?
+---->The external data source allows an external programme to act as a data source by exposing arbitrary data 
+for use elsewhere in the Terraform configuration by implementing a specific protocol (defined below).
+
+36)Which command can be used to preview the terraform execution plan?
+---->The terraform plan command generates an execution plan, which allows you to preview the changes that 
+Terraform intends to make to your infrastructure. When Terraform generates a plan by default, it:
+
+Reads the current state of any existing remote objects to ensure the Terraform state is current.
+The current configuration is compared to the previous state, and any differences are noted.
+Proposes a set of change actions that, if executed, should cause the remote objects to match the configuration.
+
+37) What is the benefit of Terraform State?
+----->The Terraform State is a critical feature in Terraform that serves as a record of the infrastructure resources managed by Terraform. It contains mappings between the resources defined in your configuration and the actual infrastructure that exists. Here are the key benefits of using Terraform State:
+----->Resource Management:
+The state file helps Terraform track the current configuration of your infrastructure and its dependencies, ensuring that it knows the state of each resource it manages. This enables Terraform to plan changes and identify differences between the desired and actual state.
+---->Efficient Change Detection:
+By maintaining the state file, Terraform can compute a minimal set of changes required to transition your infrastructure from the current state to the desired state (as defined in your .tf configuration files). This helps to optimize resource creation, modification, and deletion, avoiding unnecessary changes.
+---->Collaboration:
+When using remote backends like AWS S3, Azure Blob Storage, or Terraform Cloud, the state file can be shared among team members. This ensures that everyone works from a consistent view of the infrastructure, avoiding conflicts or inconsistencies when changes are applied.
+----->Metadata and Outputs:
+The state file stores metadata and outputs that are essential for resource interdependencies. For instance, the output values from one resource (like an instance IP address) can be used as inputs for another resource (like setting up a security group).
+---->Rollback and Recovery:
+If a deployment fails or something goes wrong, the state file can be used for recovery. Since it maintains an up-to-date record of your infrastructure, Terraform can help you roll back to the last known good state or restore resources to their previous configuration.
+---->Terraform Cloud Integration:
+When using Terraform Cloud, state management is fully automated and stored in a centralized, secure manner. Terraform Cloud also provides features like versioning, access controls, and automatic locking, which ensures better security and collaboration for teams managing infrastructure as code.
+
+38)What is Terraform D?
+Answer: Terraform D is a plugin used on most in-service systems and Windows. Terraform init by default searches next directories for plugins.
+
+39) How will you upgrade plugins on Terraform?
+----> Run ‘terraform init’ with ‘-upgrade’ option. This command rechecks the releases.hashicorp.com to find new acceptable provider versions. 
+It also downloads available provider versions. “.terraform/plugins/<OS>_<ARCH>” is the automatic downloads directory.
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+

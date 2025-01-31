@@ -1,0 +1,75 @@
+ $PSVersionTable ----> to check the version of powershell
+
+location ------> to check the path of folder
+
+Write-Host "Hello world" ------> hello world program in powershell
+
+Install-Module -Name Az -AllowClobber -Scope CurrentUser -------> install the powershell modules
+
+Import-Module Az-----> import modules from azure
+
+ Get-AzSubscription -----> to check the subscription
+
+
+ New-AzResourceGroup -Name 'test-simple-rg' -Location 'UKsouth' ------> resource group command
+
+ Register-AzResourceProvider -ProviderNamespace Microsoft.ServiceBus---->  to register the Microsoft.ServiceBus.
+
+ New-AzServiceBusNamespace -Resource Group 'test-simple-rg' -Name 'mynamespace-sreenu' -Location 'uksouth'-------> command for namespace 
+
+
+To check the PowerShell version -----> ""get-host"" 
+
+To use PowerShell efficiently we have to update our help command ------> ""update-help""
+
+To check commands use -----> ""get-help""
+
+To check all the commands in system  ------> ""get-command""
+
+To see count of the command ----------> ""(get-command).count""     @@@@example --> 7800  is the total services count
+
+To see particular services in the all services ------> get-command *name of the word we want*  
+
+To verify the count of the particular search services ----->  (get-command *name of the word we want*).count 
+
+To search the particular services we have to made some more extra changes ----->  get-command *-name of the services we have to see*
+
+we can check how many commands with get-services------->  get-help get-service
+
+we can check the services by the usage of module ------> get-command -module az.storage         ###az.storage == module name or source name 
+
+in this az.storage we can check the count using -------> (get-command -module az.storage).count      ##example ---> 97 is the number count particular ""az.storage"" services
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

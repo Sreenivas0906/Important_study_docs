@@ -1,0 +1,454 @@
+		Git/GitHub
+	===========================
+
+	1. Intruduction
+	2. GitHub administration (ORG/Repo/User/Team Creation)
+	3. Commands
+	4. .gitignore
+	5. Create Branch
+	6. Create Tag/Releases
+	7. Personal access tocken generation
+	8. SSH Key generation
+	9. Git Branching strategy
+	10. Pull Request Creation and Merging
+	11. Git Hooks
+	12. ReadMe.md file
+	13. Git Best Practies.
+	
+	===============================
+	
+	1. Intruduction
+	-----------------------------
+	Version control systems are tools that help a software team manage changes to source code over time.
+	VCS are sometimes known as SCM (Source Code Management) tool.
+
+	git --> VCS(Version controling system)
+	GitHub --> Github is a hosted service for the git and its provides GUI.
+	
+	Two types Version Controlloing
+		1) Centrailized Version controlling (SVN/CVS/TFS)
+		2) Distributed Version controlling (Git/GitHub)
+
+	GitHub
+	GitLab
+	Bitbucket (Stash) --> Atlassian
+	
+	SVN --> subversion
+	CVS --> Cuncurrent version system
+	TFS --> Team Foundation server
+	
+	Diff b/w GitHub and SVN/CVS/TFS??
+	--------------------------------------
+	Git is Distributed Version controlling.
+	SVN/CVS/TFS is Centrailized Version controlling
+	Git has Local and remote repo's but SVN is Centrailized Version controlling so 
+	SVN no concept of Local repo, directly push the code into remote.
+	
+	2. GitHub administration
+	--------------------------------
+	1. Create a Org
+	2. Create a repo  --> to store the source code
+	3. Create a Team for managing userse
+	4. Add users to the Team 
+	5. provide the repo access to the team.
+	
+	3. Commands
+	---------------------------------
+	Install git bash --> git --version
+	Move to Desktop --> cd ~/Desktop -->(for Windows)
+						cd ~  --> (for Linux)
+	Create folder --> mkdir amazion(project Name) --> cd amazion --> pwd
+	We can use IDE's --> Integrated development environment like Eclipes,netbeans,VS, Android studio, Anypoint studio
+	git init ---> make working directory as git repository, here We have 2 observations 1. working directory is master 2. created .git 
+	add a .gitignore --->
+	
+	1. git clone gitURL
+	2. cd gitFolder
+	3. create files (touch)
+	4. git add <fileNames>
+	5. git add . (Add all files)
+	6. git status 
+	7. git commit -m "commit message"
+	10. git log / git log -2 / git log --oneline
+	11. git push (If BranchName same) 
+	11. git push -u origin BranchName (if you are in different Branch) 
+	12. git pull orgigin BranchName
+	13. git fatch
+	
+
+
+	(untracked files)			(staged files)		(commited files)
+	working directory ------> staging area -------> LocalRepo					RemoteRepo
+	
+	DBUtils.java	
+	StringUtils.java   ---->				-------> git commit -m  "Initial" --->git push
+						git add .
+						git add *.java
+						git add *.sh
+						git add file1 file2
+	git status
+	
+		
+	After excuteing git log command, it will display all commited history like commit ID, Author, Date&Time,Commite message 
+	git log -2
+	git log --oneline
+	
+	Git Configuration:
+	--------------------
+	git config --global user.name "Name"
+	git config --global user.email "Email"
+	git config --global --list
+	
+	Config git remote repository to local repo
+	--------------------------------------
+	git remote add az(origion) <URL> https://github.com/DevOps-Eng-Blr/DevOps_Docs.git
+	git remote -v 
+	git push az(aliasName) master
+	git remote remove az(aliasName) 
+	
+
+        git diff ------> to see what we have modified in the code.
+        git diff --staged ======> to see what we have modified in the code after the code is staged.
+        git rm --cached <file name> ======> to delete the file from the git.
+
+	How to get back to working area from staging area??
+	git reset (all stagged file move to working area)
+	git reset <fileName> (for Purtucular file)
+	
+	How to go back to previous version of code
+	git reset --hard f1cd7c3(commitID)
+	
+	How to revert back recently commited from remote server??
+	git revert <recent commitID>
+	
+	How to revert back previously commited in remote server??
+	Its only posible recently commited once. but not posible to revert back previous commits.
+	
+	How to know, how many files are commited in purtucular commitedId??
+	git show <CommitID> (CommitID 6 to 7 charactors aslo fine)
+	git show --pretty="" --name-only <commitID>  --> it will show only commited file names
+	
+	git clean -n (would remove untracked file)
+	git clean -f (remove untracked files)
+	
+	
+	4. .gitignore file
+	========================================
+	   IDE's 
+	 ----------
+	 Eclipes
+	 Netbeans
+	 Intelija
+	 Visuval studio code 
+	 
+	 .project
+	 .classpath
+	 .setting
+	 /node_module/1.txt.
+	 
+	add above files and  commit  the .gitignore file. 
+
+
+	5. Git Branch commands:-
+	============================
+	git branch	# display local rapo branchs
+	git branch -r	# display remote repo branchs
+	git branch -a	# display all local and remote repo branchs
+		
+	git branch <branchName>Dev	# create branch
+	git checkout <branchName>Dev	# switch branch
+	gir checkout -b <branchName>Stage # creating and switching branch with single command
+
+	git branch -m <BN>Staging # update default Branch Name
+	
+	#When ever creats new branch all exitsing branch(data) move into new branch.(IMP)
+	#just update or modify a file then commit in dev branch not in master branch
+	after commited observe in dev and master branchs
+
+	insterd of "git add" we can use "git commit -a -m "message" "
+
+	git commit -a -m "message"	# -a used for upddated files only 
+
+
+	# compare with dev branch from master branch
+	 
+	git diff <BN1> <BN2>
+	git diff dev	# point to master branch then compare
+	git diff dev stage	# proved two branch names
+
+
+	# merge the file from one branch to another branch
+
+	git merge <BranchName>
+	git merge dev	# Pointing to master branch the mearge
+
+
+	#merge confleicts:-
+
+	when we are merging same file with same line of code then it will happen merge conflect.
+
+	We have to open file and fix it merge conflects.
+
+	# creating and switching branch with single command 
+	git checkout -b <branchName>Stage
+	
+	
+	#How to pussh all branchs to remote repo from local repo
+
+	git push aliasName <BN>
+	git push az dev
+	git push az dev state	# push multiple branchs
+	git push az --all 	# push all branch
+	
+ 
+	Create/Remove branchs from UI
+	====================================
+	Create a branches 
+	remove branchs 
+	update/modify the files in any branch.
+	by default master --- we can change the default master to some another branch
+	
+	# How to integrate from one branch to another branch ?? using Pull request
+
+	Pull Request-
+	=============  merge the files from one branch to another branch from UI using PullRequest(PR)
+
+	#We can Delete branchs from Remote repo from UI --> if we delete branches from remote repo, It will not delete the local repo.so
+	 
+	Delete branchs from Local repo:-
+	git branch -d <BN>dev
+ 
+	#Delete branchs from Remote repo from command line:
+	 git push aliasName :<BN>stage
+	 git push az :stage
+	 
+	#Rename the branch from command line:
+	 git branch -m <BN>staging
+
+
+
+		6. Create Git Tags
+		====================
+	Difference b/w git Branch and git Tag??
+	================================================
+	Branch						Tag
+	--------------------		---------------------
+	-Branch is mutable			Tag is Immutable
+	-git branch					git tag 		
+	-git branch bName			git tag tName
+	-git branch -d bName		git tag -d tName
+	-git push aliasName bName	git push aliasName tag tName
+	-git push aliasName --all	git push aliasName --tags
+	-Create from any branch.	we will create tags on master/main branch only.(IMP)
+
+
+	git tag --> It will display the tags
+	git tag <TN> --> It will create the tag
+	git push az tag <TN> --> It will push the tag to remote repo
+	git push az --tags --> It will push all the tags to remote repo.
+	git tag -d <TN>
+	
+	--> Tags are not automatically pushed when you push a branch or use the --all option. The --tags flag sends all of your local tags to the remote repo.
+	
+	#how to push tags from local to remote repo??
+	git push aliasName tagname
+	
+
+			Git Stash
+		==================
+		This feature is used for leaving unfinished work, in such a way that Git cannot access it and continue to work on some other files.
+
+		Further commands of git should be able to process only  the new files.
+		This can be done using git stash.
+		
+	 git stash / git stash save " updated some code"
+	 git stash list
+	 git stash show --> This command shows the summaary of the stash diffs.
+	 git stash show -p --> It will give you the detailed list of differences.
+	 
+	 stash@{0}
+	 stash@{1}
+	 
+	 git stash apply --> It will apply latest of stash
+	 git stash apply  stash@{1}--> It will apply the specified stash
+	 git stash drop --> It will drop from your stack.
+	 
+	
+	# We have to save/store the stash in temp
+	git stash 
+	git stash list
+ 	
+	#we can use only one command insted of stash apply and drop for restore the stashed
+	 git stash pop --> It apply the latest stash and then immediatly drop it from your stack.
+	 git stash pop stash@{1} --> It will apply the purticular stash and then immediatly drop it from your stack.
+			
+			Commands
+				--------------------
+		1) To stash  the stagged files
+		 $  git  stash
+
+		2) To stash  staged and untracked files
+		$  git  stash  -u
+
+		3) To see the list of stashes
+			git  stash  list
+
+		4) TO get back the stashed files
+		   git  stash pop
+
+		5) to bring the older stash  out
+		  git  stash  pop  stash@{stash_number}
+		  
+		
+			Git Cherry-pick
+		========================
+	git cherry-pick will commit/Merge purtucular commitId which has specified the commitID
+		
+	for example:-
+		dev branch ---> Dc1, Dc2, Dc3 (Pushed code 3 times in dev brsnch)
+		now i want to merge the code Dc2 means second commit only to master branch
+	git log --> take commitId 
+	git cherry-pick <commitId> --> Iw will mearge
+	
+	git cherry-pick --abort --> It will cancel the cherry-pick option
+	
+	#How to get the code from remote repo??
+	git clone <URL>
+	
+	
+	#Diff b/w git pull and git fetch
+	==========================================
+	
+	Remote repo		--------|
+		|					|	
+		|	git fetch		|	
+		|					|
+	Local Repo				git Pull
+		|					|
+		|	git merge		|
+		|					|
+	Working Dir		---------
+	
+	git fetch --> get the code from remote repo to local repo
+	git Pull --> get the code from remote to working dir
+	
+	#When we are going to use fetch and when we are going use pull?
+		git Pull:- Ever day morning/ freshly start then pull the code from remote repo
+		git fetc h:- something working/updating files in middle at the sane time some one has updated in remote and asked to pull the updated code.
+					fetch and keep it in local repo once your work is done merge it working directory.
+	
+	#Diff b/w Git checkout and SVN checkout??	
+	
+	SVN checkout :- get the code from remote repo to local repo
+	Git checkout :- switch the branchs from one branch to another branch
+	
+	SVN checkout = git pull 
+	SVN checkin = git push 
+	
+	
+		SSH Keygen
+	=========================
+	Passwword less authentication establish
+	
+	#what is command to generate SSh keys??
+	
+	ssh-keygen --> It will generate two  by default rsa encrypt algotithm
+	id_rsa     --> private key
+	id_rsa.pub --> public key
+	
+	Another encription algoritham, we have to specifiy
+	
+	ssh-keygen -t dsa
+	id_dsa     --> private key
+	id_dsa.pub --> public key
+	
+	#where it is going to store?? user home directry
+	~/.ssh
+	
+	#To check if existing SSH keys are present in machine
+	ls -al ~/.ssh
+	
+	#To remove if already existing SSH kes in your machine
+	rm -rf ~/.ssh/id_* 
+	
+	#To see the ssh key in terminal and copy it
+	cat ~/.ssh/id_dsa.pub
+	
+	#Go to Github UI remote server in profile --> settings--> SSH and GPG Key then Paste it
+	# Now check we have properly config or not??
+	ssh -T git@github.com   (use company github url if your working private company)
+	
+	#To remove Known_hosts file and again run ssh -T git@github.com
+	rm -rf ~/.ssh/known_hosts 
+	
+	# To Config ssh remote URL to terminal (ClI)
+	git remote add aliasName <ssh URL>
+	git remote add sshurl git@github.com:DevOps-Eng-Blr/DevOps_Docs.git
+	
+	#Now clone or push the code.Done
+	
+	
+	
+		PAT(Personal Access Token)
+	=============================
+	Passwword less HTTPS token athentication useing PAT.
+	
+	PAT used to Insted of password, we will create token (PAT)
+	(Httpusrname,Passwword) & usrname, token
+	
+	How to generate a PAT in GitHub??
+	Profile--> Setting--> Developer settings --> PAT
+	
+	
+		Git Branching strategy
+	==============================
+		
+		feature1, feature2
+		bugfix/hotfix
+		master
+		Dev 
+		QA/stage/UAT/PreProd
+		Prod
+		
+
+
+		Git  rebase
+	====================
+	git merge :- we have to integrate from branch to another branch
+	git rebae :- rebase also integrate from branch to another branch
+	
+	# Then what is the diff b/w git merge and rebase???
+	1. git merge and rebase both are going to integrate from branch to another branch.
+	
+	master -- MC1 -- MC2 -- MC3
+						|
+						|
+						V
+				Development -DC1 - Dc2 - Dc3 -DC4 -DC5 
+				
+	git merge development --> It will integrate all commits to master in single object(we donn't know how many commits in dev branch and also there is no clear picture in master aslo how many commits integrated)
+	git rebase development--> It will integrate all commits to master as it is as from Dev (after commited in master It will be clear picture all commits)
+	
+	This is called as fastforward merge.
+	The commits from the child branch are added to the top of the master branch.
+	This is helpful when we want code from a branch to be reflected as the latest working version on master.
+	
+		Git Ammend
+	===================
+	git commit  --amend  -m "b"
+	
+	
+		README.md
+	================
+	help document about your project 
+	
+	
+	git best practices
+	==================
+	
+
+	Fork
+	==========
+	you will get own copy of repo.
+	
+	

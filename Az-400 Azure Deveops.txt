@@ -1,0 +1,74 @@
+Az-400 Azure DevOps
+-------------------
+
+SDLC ------>Software Development Life Cycle
+
+learn.microsoft.com/training/courses/browse ------>Az-900 link
+
+LET portal or student portal ---------> recorded class link 
+
+username : ma20388428@wipro.com
+pswd:20388428
+
+*************************************************
+
+https://gsi.learnondemand.net  --------> lab link 
+
+promo code : QQ3G26M0NJELGM8C1T
+
+**************************************************
+
+what is DevOps : DevOps is the union of people process and product to enable continuous delivery  of value to end users.
+----------------
+
+DevOps invented by : DONOVAN BROWN
+
+devops architecture: 
+--------------------
+
+********************************************
+
+CI ----> Continuous Integration
+CD ----> Continuous Delivery / Continuous Deployment
+
+
+Continuous Integration : Continuous Integration drives on the out merging and testing of code . which finds the errors early .
+ ----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

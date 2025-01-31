@@ -1,0 +1,24 @@
+
+Keyboard shortcuts
+
+Shortcut name	                          Keyboard command
+--------------                           ---------------------
+Play or pause media	                  Alt + K
+Close open popups	                     Esc
+Enter or exit full screen mode	          Alt + Enter
+Mute or unmute sound	                  Alt + M
+Increase sound volume	                  Alt + up arrow key
+Decrease sound volume	                  Alt + down arrow key
+Toggle noise suppression on and off	  Alt + A
+Toggle between audio tracks	          Alt + H
+Toggle between caption languages	  Alt + C
+Enter or exit captions reposition mode	  Alt + R
+Move captions while in reposition mode	  Alt + arrow keys
+Increase playback speed	                  Alt + X
+Decrease playback speed	                  Alt + Z
+Skip 10 seconds forward	                  Alt + L
+Skip 10 seconds backward	          Alt + J
+Skip 15 seconds forward	                  Alt + right arrow key
+Skip 15 seconds backward	          Alt + left arrow key
+Go to 0% to 90% of the media	          Alt + 0 to 9 number keys
+Access keyboard shortcuts	          Alt + G

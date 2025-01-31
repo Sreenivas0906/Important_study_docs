@@ -1,0 +1,50 @@
+1) What is VS CODE ??
+    ** VS CODE (Visual Studio Code) is an open source code editor primarily used to correct and replace cloud and web applications coding errors .
+    ** VS Code is developed my Microsoft and supported by the mac OS , Linux and windows operating systems.
+
+programming language that use VS code : 
+----------------------------------------
+C#, Visual Basics, Java-Script, R, XML, Python, CSS, GO, Perl, HTML and etc 
+
+2) How to download VS Code ??
+    ** go to chrome browser and search for vs code download.
+    ** click on the first link that we see in the browser.
+    ** click on windows for 64 bit.
+    ** open the file and open the downloaded file.
+    ** click on I Accept and next , click the checkboxes in the file.
+    ** click next and next at last install will complete.
+
+3) To run the code use ----- > CTRL+ALT+N
+4) TO stop the code use ---- > CTRL+ALT+M
+
+extensions:
+-------------
+5) python indent -----> it shows the Indentation
+6) 
+
+debugging -----> debugging are used to check each line by line using breakpoints
+breakpoints -----> breakpoints are used to separate the code as some parts  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

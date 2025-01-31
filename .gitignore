@@ -1,0 +1,4 @@
+echo "sree31480_serviceprinciples.txt" >> .gitignore
+echo "Gen_AI_Docs.txt" >> .gitignore
+git add .gitignore
+git commit -m "Updated .gitignore to exclude sensitive files"

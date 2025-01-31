@@ -1,0 +1,812 @@
+GENARATIVE ARTIFICIAL INTELLIGANCE::
+=====================================
+Introduction
+Introduction to Generative AI
+Advantages of Generative AI
+The Future of Generative AI
+Ethical Considerations in Generative AI
+Introduction and Phases to LLMs
+Introduction to OpenAPI GPT API
+Claude 3.5 Sonnet
+Claude Artifacts
+Demo on Claude Artifacts
+Use cases of Claude
+Demo on Claude Sonnet
+4o Mini and uses
+Why GPT 4o Mini
+Features of GPT 4o Mini
+Difference between GPT 4o and GPT 4o Mini
+Demo on Playground tab, Dashboard tab, Docs tab and API References tab
+Prompting on Playground and Billing Settings
+Version of Google Gemini
+General Prompt Demo Google AI Studio
+Structured Prompt in Google AI Studio
+Model Tuning in Google AI Studio using System Sample
+Other data import options in Google AI Studio using System Sample
+Abstract of the Email Generator App
+Software Requirements for App
+Implementation of the App
+Executing the App
+Generative AI Popular Tools
+ChatGPT
+Github Copilot
+Claude
+Gemini
+Basics of Prompt Engineering
+Basics of ChatGPT
+Demonstration of Prompt on ChatGPT
+Python App using ChatGPT 4o
+Using ChatGPT 4o for Statistical Analysis
+Demonstration of Prompt using ChatGPT 4-o
+Portfolio website code execution
+Introduction to Github and Github Copilot
+Hands-on session on Github Copilot
+Introduction of Claude
+prompt Engineering and Install Claude
+Hands-on Claude
+Program for tic-toe game using Claude
+Claude 2 API
+Integration of Python and Gemini 1.5 pro
+Chatbot using Gemini 1.5 pro
+Generative AI Applications
+Flask ChatGPT App
+Flask Text-to-Image App
+Demo - Flask Text-to-Image App
+Introduction to Langchain
+Why LangChain?
+Development Environment Setup of LangChain
+Demo on Library Installation
+LangChain Core Concepts
+LangChain Components
+LangChain Case Study
+Limitations of LLMs
+Introduction to RAG
+RAG Basics Concepts and Terminology
+Key Components of RAG - Retrieval and Generation
+Workflow and Applications of RAG
+Hallucinations in RAG
+Steps to implement RAG with LangChain
+Hands-on RAG in detail
+
+
+GEN AI ::
+-------- Functions by employing a ""NEURAL NETWORK"" to analyze ""DATA PATTERNS"" and ""GENERATES NEW CONTENT"" based on the given content
+
+difference b/w discriminative AI and gen Ai ::
+------------------------------------------------
+
+discriminative AI ------> based on the input it will give output
+               ex ------> mixing the alphabets and numbers 
+                       **it will separate the numbers and alphabets
+
+gen AI -------> based on the input it will generates the new output 
+    ex -------> mixing the alphabets and numbers
+              ** it will takes the alphabets and numbers and it generates the new output
+
+how does Gen AI works ::
+------------------------
+
+INPUT ---------------- GENARATIVE AI--------------------TASKS                              ### input-----> text ,audio ,video ,any other inputs 
+                           |
+                           |
+                           |
+              ---------------------------
+              |                         |
+              |                         |
+        pre-training               fine-tuning 
+             
+
+DIFFERENT TYPES OF GENARATIVE AI ::
+------------------------------------
+1) Generative Adversarial Networks (GANs):
+        there are 2 modules 
+                 *generating the content                            ### the 2 modules combine and perform and gives a new realistic data
+                 *judging the content    
+
+2) Variational Autoencoders:  this AI learns to recreate and generates new similar data.
+
+3) Transformers : to produce sequence using context.
+
+4) Diffusion model : this generates data by refining noisy starting until it look realistic. 
+
+
+APPLICATIONS OF GENERATIVE AI ::
+=================================
+1. Content Creation::
+=======================
+a. Text Generation
+--------------------
+Writing articles, blogs, and social media posts.
+          *Generating summaries or paraphrased content.
+          *Creating personalized emails or customer responses.
+          *Examples: ChatGPT, Jasper AI.
+
+b. Image Generation
+--------------------
+Designing graphics, logos, or artworks.
+          *Generating photorealistic images.
+          *Applications in gaming and virtual reality.
+          *Examples: DALL-E, Stable Diffusion.
+
+c. Video Generation
+----------------------
+          *Producing videos for marketing or education.
+          *Generating synthetic avatars or animations.
+          *Examples: Synthesia, Deepfake technologies.
+
+d. Audio and Music Creation
+----------------------------
+          *Composing music tracks.
+          *Generating voiceovers or synthetic speech.
+          *Examples: Jukebox (OpenAI), Google’s WaveNet.
+
+
+2. Design and Prototyping
+============================
+Fashion and Product Design:
+---------------------------
+          *Generating new styles or concepts for clothing, accessories, or industrial products.
+Architectural Designs: 
+-----------------------
+          *Creating layouts or visualizations of buildings.
+UI/UX Prototyping: 
+-------------------
+          *Designing website or app interfaces.
+
+3. Healthcare
+===============
+Drug Discovery: 
+--------------
+          *Identifying new molecules for pharmaceuticals.
+Medical Imaging: 
+----------------
+          *Generating high-resolution images for analysis and simulations.
+Personalized Medicine: 
+----------------------
+          *Creating patient-specific treatment plans using synthetic data.
+Health Chatbots: 
+----------------
+          *Providing accurate and empathetic responses for patient queries.
+
+4. Entertainment and Media
+===========================
+Gaming: 
+-----------
+          *Generating characters, environments, or levels in video games.
+Scriptwriting: 
+-------------
+          *Creating plots or dialogues for movies, shows, or games.
+Virtual Influencers: 
+---------------------
+          *Designing AI-driven personas for brand promotions.
+
+5. Education and Training
+==========================
+Learning Content Generation: 
+-----------------------------
+          *Creating custom quizzes, lessons, or summaries.
+Simulations: 
+-------------
+          *Generating virtual training environments for various industries, including healthcare, aviation, and military.
+Tutoring Chatbots: 
+------------------
+          *Personalized educational assistance.
+
+6. Business and Marketing
+==========================
+Advertising: 
+-------------
+          *Crafting ad copy, visuals, or videos.
+Customer Support: 
+----------------
+          *Generating realistic responses for automated chatbots.
+Market Research: 
+-----------------
+          *Simulating consumer behavior or trends.
+
+7. Science and Research
+======================
+Simulations: 
+------------
+          *Modeling complex systems, like climate or astrophysics simulations.
+Data Augmentation: 
+--------------------
+          *Generating synthetic data to improve machine learning models.
+Scientific Writing: 
+--------------------
+          *Assisting researchers in drafting papers or reports.
+
+8. Art and Creativity
+======================
+Digital Art: 
+------------
+          *Creating paintings, sculptures, or mixed media.
+Storytelling: 
+---------------
+          *Generating plot ideas or interactive storylines for novels or games.
+Cultural Preservation: 
+-----------------------
+          *Recreating historical artifacts or lost works.
+
+9. Synthetic Data Generation
+==============================
+Machine Learning: 
+------------------
+          *Producing synthetic datasets to train models when real-world data is scarce or sensitive.
+Anonymization: 
+---------------
+          *Creating non-identifiable data for privacy-preserving applications.
+
+10 Finance
+============
+Fraud Detection: 
+----------------
+          *Generating scenarios for testing fraud detection systems.
+Market Predictions: 
+-------------------
+          *Simulating market trends based on historical data.
+Report Generation:
+-------------------
+         *Automating financial report writing.
+
+12. Personalization
+====================
+Custom Recommendations:
+------------------------
+          *Generating personalized suggestions for users in apps or services.
+AI Companions: 
+---------------
+          *Creating virtual companions for mental health or entertainment (e.g., Replika).
+
+
+ADVANTAGES OF GENERATIVE AI ::
+===============================
+           *Creativity: Produces unique designs, art, and ideas.
+           *Efficiency: Automates content creation, saving time.
+           *Cost Savings: Reduces labor and prototyping expenses.
+           *Personalization: Tailors content and experiences to users.
+           *Accessibility: Makes tools and resources widely available.
+
+
+FUTURE OF GENERATIVE AI ::
+===========================
+           *Creativity: Revolutionizing art, design, and storytelling.
+           *Automation: Streamlining industries like healthcare, education, and business.
+           *Personalization: Enabling ultra-customized user experiences.
+           *Innovation: Driving breakthroughs in science, technology, and problem-solving.
+           *Collaboration: Enhancing human creativity with AI-powered tools.
+
+Large Language Model (LLM)::
+=============================
+           * LLMs are the LANGUAGE MODELS made up of NEURAL NETWORK with BILLIONS OF PARAMETERS that are trained by SELF-SUPERVISED LEARNING on vast amounts of UNLABLED TEXT..
+
+HOW DO LLM WORKS ::
+=====================
+
+1. Training Phase::
+---------------------
+a. Data Collection.           
+           *LLMs are trained on massive datasets like books, articles, websites, and other text sources.
+b. Tokenization (or) preprocessing. 
+           *Text is broken into smaller units called tokens (e.g., words or subwords) for easier processing.
+c. Neural Network Architecture (or) model architecture.
+           *LLMs, often based on the Transformer architecture, process tokens in parallel, capturing relationships and context between words using mechanisms like self-attention.
+d. Learning Patterns (or) Learning .
+           *The model learns patterns in language by predicting the next token in a sequence, optimizing itself to minimize prediction errors.
+
+2. Inference (Using the Model)
+-------------------------------
+a. Input Processing
+           *User inputs are tokenized and fed into the model.
+b. Context Understanding
+           *The model uses its learned knowledge to analyze the context of the input.
+c. Output Generation
+           *The model predicts and generates the most likely next tokens, forming coherent and relevant responses or outputs
+
+There are some paid and open source LLMs are there . they are
+
+     paid                              open source
+   --------                          ---------------
+   1)GPT-4                             1)GPT NEO
+   2)ms azure open                     2)BERT
+          AI service
+
+MOST POPULAR LLMs::
+-------------------
+1) GPT-4 from openAI
+2) BERT from google
+3) T5 from google
+4) Claude
+5) llama
+6) Claude 3.5 sonnet
+7) GPT-4o Mini
+8) Gemini from google
+
+INTRODUCTION TO OPEN AI GPT API::
+=================================
+ API features : 
+---------------
+ Text generation , completion , conversation capabilities.
+ fine-tuning and customization for specific tasks.
+
+Steps to generate API KEYS::
+-----------------------------
+  * go to chrome website and search for OPENAI LOGIN.
+  * then click on signup
+  * click on login that your are already having account
+  * then click on API
+  * search for API KEYS
+  * then click on NEW SECRET KEY
+  * then give some random name for the key to display
+  * then copy the SECRET KEY and paste it on somewhere
+  * once it gone it will not display again.
+
+
+CLAUDE 3.5 SONNET::
+==================
+features of Claude 3.5 sonnet :
+--------------------------------
+          *Industry-leading performance: Delivers top-tier accuracy and power.
+          *Enhanced speed: Fast, responsive performance for real-time tasks.
+          *Advanced coding capabilities: Handles complex coding with ease.
+          *Superior visual reasoning: Interprets and analyzes visual data effectively.
+          *Innovative artifacts: Generates unique and creative outputs.
+          *Cost-effective accessibility: Affordable, high-quality AI solutions.
+          *Strong security & privacy focus: Ensures data protection and confidentiality.
+          *Part of a growing AI family: Seamlessly integrates with other AI systems.
+          *Enterprise-focused design: Optimized for scalable business solutions.
+          *User-driven development: Continuously improves based on user feedback.
+
+Advantages of Claude 3.5 Sonnet ::
+----------------------------------
+          *High performance: Fast, reliable, and efficient.
+          *Scalable: Easily adapts to growing needs.
+          *Versatile: Handles a wide range of tasks with ease.
+          *User-friendly: Intuitive and easy to interact with.
+          *Affordable: Delivers advanced capabilities at a great value.
+          *Secure: Strong data protection and privacy measures.
+          *Innovative: Generates creative, high-quality outputs.
+          *Enterprise-ready: Tailored for business applications and large-scale use.
+          *Collaborative: Integrates well with other AI systems.
+
+GOOGLE GEMINI::
+==============
+      ***Google Gemini is an advanced AI that combines text and image understanding, enabling smarter, faster, and more 
+                   versatile solutions for tasks like natural language processing, visual reasoning, coding, and creative content generation.
+
+
+VERSIONS OF GOOGLE GEMINI
+==========================
+                                                       google Gemini
+                                                            |
+                                                            |
+                            ----------------------------------------------------------------
+                            |                               |                               |
+                            |                               |                               |
+                         Flash                             Nano                         Ultra/pro
+
+    Version	           Release Date	                                          Key Features
+    --------              ---------------                                         ------------
+    Gemini 1	           December 2023	                    Multimodal capabilities, text-image integration, advanced natural language understanding.
+    Gemini 1.5             February 2024	                    Enhanced reasoning, improved multimodal input-output, better response coherence.
+    Gemini 2		   June 2024	                            Real-time multimodal generation, advanced coding capabilities, enterprise scalability.
+    Gemini 2.5             October 2024	                            Superior visual reasoning, increased efficiency, integration with third-party tools.
+    Gemini 3	           Expected 2025	                    Anticipated improvements in AI-human collaboration, creative output, and advanced adaptability. 
+
+
+
+BASICS OF PROMPT ENGINEERING::
+==============================
+             * prompt engineering is as much an art as it is a science .
+ prompt engineering consists of 2 words . that are
+           Prompt -----> A detailed set of guidelines given to an LLM to do a task .
+           Engineering ----> Developing a task-specific prompt iteratively. 
+
+      *** Prompt Engineering is an Iterative Process
+
+COMPONENTS OF A GOOD PROMPT ::
+==============================
+              * Clarity: Clearly state the task or question without ambiguity.
+              * Context: Provide enough background information to ensure understanding.
+              * Specificity: Define the scope, desired output, or format explicitly.
+              * Conciseness: Use precise language to avoid unnecessary complexity.
+              * Goal Orientation: Focus on the outcome you want to achieve.
+              * Relevance: Ensure the prompt aligns with the user's or system's capabilities.
+              * Engagement: Use language that encourages creativity or critical thinking.
+              * Examples (if needed): Provide examples or templates to guide the response.
+              * Constraints: Define any boundaries or restrictions for the task.
+              * Open-endedness (if appropriate): Allow flexibility for creative or comprehensive responses.
+
+COMPONENTS OF A GOOD CHECKLISTS ::
+==================================
+1) Define the goal ----> Tell the ChatGPT What you exactly want it to do .
+2) Detail out the format -----> Specify the format in which you want our output                ###eg ----> tables , paragraphs , lists ,with or without heading and etc .....
+
+What is GitHub ?
+=================
+               * GIT ------ > "" Global Information Tracker ""
+               * Git is a Distributed " version control system "
+               * Git was invented by LINUS TORVALDS in the year of 2005
+
+What id GitHub Copilot ?
+========================
+
+               * AI Developer tool
+               * A Generative AI model Developed by GitHub Copilot , openAI and Microsoft :
+Features of GitHub Copilot::
+============================= 
+        ** Sharp and Intelligent code Suggestions.
+        ** Auto completes code.
+        ** code faster.
+        ** understands filetype.
+        ** cloud code understanding.
+        ** Database Understanding.
+        ** IDE Integration.
+        ** Gives Best Suggestion
+
+Advantages and disadvantages of GitHub Copilot::
+===============================================
+Advantages::
+--------------
+- Speeds up coding by suggesting complete lines and blocks of code in real-time
+- Helps with repetitive coding tasks and boilerplate code
+- Can understand context from comments and generate relevant code suggestions
+- Works across many programming languages and frameworks
+- Learns from your coding style and improves suggestions over time
+- Can generate code for common algorithms and patterns
+- Particularly helpful for writing unit tests and documentation
+
+Disadvantages::
+---------------
+- May suggest code with security vulnerabilities or bugs if not carefully reviewed
+- Can produce incorrect or inefficient code solutions
+- Monthly subscription cost may not be justified for casual programmers
+- Privacy concerns as your code is analyzed by AI systems
+- Can make developers overly reliant on AI assistance rather than developing their own skills
+- Sometimes generates code that may have licensing issues from its training data
+- May struggle with complex, domain-specific, or highly specialized coding tasks
+- Network connectivity required for suggestions to work
+
+
+What is Chatbot ?
+=================
+      *** A chatbot is an AI-powered software application designed to simulate human-like conversations and assist 
+                       users by answering queries, providing information, or performing tasks through text or voice interactions.
+
+
+
+Types of Chatbot::
+------------------
+         * Rule-based
+         * AI-powered
+         * Task-oriented
+         * Conversational
+
+Applications of Chatbot::
+-------------------------        
+         * E-Commerce
+         * Healthcare
+         * Finance
+         * Education
+         * Entertainment
+
+ Flask GPT app
+================
+1. What is Flask?  
+   - Flask is a lightweight Python web framework used to build web applications quickly and easily.
+
+2. What is GPT?  
+   - GPT (Generative Pre-trained Transformer) is a language model that can generate human-like text based on user input.
+
+3. Flask GPT App Purpose  
+   - It combines Flask and GPT to create an application where users can interact with GPT (e.g., ask questions or generate content).
+
+4. How it Works  
+   - Flask handles the web interface (frontend) and routes requests to the backend.
+   - GPT processes user inputs on the backend and generates responses.
+
+5. Frontend
+   - The user interacts with the app via a web page (HTML/CSS/JavaScript).
+
+6. Backend  
+   - Flask receives user inputs, sends them to GPT for processing, and returns the responses to the frontend.
+
+7. API Integration  
+   - The app often uses APIs (e.g., OpenAI API) to connect with GPT for generating responses.
+
+8. Use Cases 
+   - Chatbots, virtual assistants, content generation tools, coding assistants, and more.
+
+9. Easy to Deploy  
+   - A Flask GPT app can be deployed on platforms like Replit, Heroku, or any cloud service.
+
+10. Why Use Flask for GPT?x  
+    - Simple to set up, flexible, and ideal for small to medium-sized applications.
+
+Flask text-to-image application:
+--------------------------------
+1. Features:
+   - Converts user-input text into a PNG image
+   - Centers text on a white background
+   - Provides a simple web interface
+   - Handles font loading with fallback options
+
+2. File Structure:
+   - A main Flask application file
+   - An HTML template in the templates folder
+   - No database required
+
+3. Setup Requirements:
+   - Flask
+   - Pillow (PIL) for image processing
+   - Basic folder structure with templates directory
+
+4. To run the app:
+   - Save both files in the correct structure
+   - Install requirements: `pip install flask pillow`
+   - Run: `python app.py`
+   - Access at `http://localhost:5000`
+
+Introduction to Langchain ::
+============================
+
+              ** langchain is a framework designed to steamline the development and the deployment of applications that utilize language models.
+              ** It provides a set of tools and components  to make working with language models more efficient and scalable .
+
+
+Key Feauters of Langchain include ::
+-------------------------------------
+
+              ** LLM Wrappers
+              ** Prompt and prompt templates
+              ** Chains 
+              ** Embedding and vectorSector
+
+ why we use LangChain
+---------------------------
+1. Easy LLM Integration: Simplifies connecting with language models like OpenAI's GPT.  
+2. Build Complex Apps: Helps create workflows for tasks like Q&A, chatbots, and document analysis.  
+3. Memory Management: Keeps context across conversations for smarter interactions.  
+4. Use External Data: Allows models to access and use your own data (e.g., documents, APIs).  
+5. Prompt Engineering: Makes it easier to design and manage effective prompts.  
+6. Retrieval-Augmented Generation : Combines LLMs with data retrieval for better answers.  
+7. Modular and Flexible : Lets you mix and match tools to fit your needs.  
+8. Quick Prototyping : Speeds up development for AI-driven applications.  
+9. Scalable Solutions : Useful for both simple projects and large-scale AI apps.  
+ 
+Retrieval- Augmented Generation (RAG)::
+========================================
+RAG (Retrieval-Augmented Generation) is a framework for improving AI model responses by combining information retrieval with language generation. Here's a clear breakdown:
+
+Key Components RAG :
+---------------------
+         * Retrieval: Finding relevant information from a knowledge base
+         * Augmentation: Adding this retrieved information to the prompt
+         * Generation: Creating responses using both the retrieved context and the model's training
+
+How it works RAG :
+-------------------
+         * User asks a question
+         * System searches through stored documents/data for relevant information
+         * Retrieved information is added to the prompt
+         * AI model generates response using both its training and the retrieved context
+
+Main Benefits RAG :
+--------------------
+         * More accurate and up-to-date responses
+         * Reduced hallucinations by grounding answers in specific sources
+         * Ability to access information beyond the model's training data
+         * Better handling of domain-specific questions
+         * Real-time access to updated information
+
+Common Use Cases RAG:
+---------------------
+         * Customer support systems
+         * Documentation search
+         * Research assistance
+         * Knowledge base querying
+         * Technical support
+         * Internal company tools
+BASIC WORKFLOW OF RAG ::
+---------------------------
+
+          * User Query: The user asks a question or provides input.
+          * Search for Data: The system retrieves relevant information from a database or documents.
+          * Combine with Query: The retrieved data is added to the user’s query for more context.
+          * Generate Response: A language model (like GPT) uses the query and data to create a response.
+          * Return Answer: The system sends the enriched, accurate response back to the user.
+
+Steps to implement RAG with langchain ::
+-----------------------------------------
+ 1) Install required packages------- > pip install langchain chromadb openai
+ 2) Import necessary modules:
+                 * from langchain.embeddings import OpenAIEmbeddings
+                 * from langchain.vectorstores import Chroma
+                 * from langchain.text_splitter import CharacterTextSplitter
+                 * from langchain.chains import ConversationalRetrievalChain
+                 * from langchain.chat_models import ChatOpenAI
+
+ 3) Load your document(s):
+                 * with open('your_document.txt', 'r') as file:
+                     * documents = file.read()
+
+
+ 4) Split text into chunks:
+                 * text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+                 * texts = text_splitter.split_text(documents)
+
+ 5) Create embeddings using OpenAI:
+                  * embeddings = OpenAIEmbeddings(openai_api_key='your-api-key')
+           
+ 6) Create vector store:
+                 * vectorstore = Chroma.from_texts(texts, embeddings)
+
+ 7) Initialize the retrieval chain:
+                 * qa_chain = ConversationalRetrievalChain.from_llm(
+                        llm=ChatOpenAI(),
+                        retriever=vectorstore.as_retriever()
+                    )
+
+ 8) Query the system: 
+                 * response = qa_chain({"question": "your question", "chat_history": []})
+                   print(response['answer'])
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

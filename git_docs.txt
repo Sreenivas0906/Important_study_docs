@@ -1,0 +1,130 @@
+GIT -----> Global Information Tracker
+
+1 . source code repository .
+----------------------------
+     a) central code repository ----> many users working at one single repository. ## no local repository.
+          i) single point failure. ex -> subversion(svn#2013).
+
+     b) distributed source code repository---->many users working at single repository and using local repository
+
+
+2 . version control system  (VCS).
+---------------------------------
+    the practice of tracking and managing changes to software code.
+
+
+3 . laptop
+      ||
+working area =======>we will find untracked files in the working area ( red colour )
+      || ------> git add
+staging/index area ========> we will find tracked files in the staging area ( green colour )
+      || -----> git commit
+local repository  ======> we will find committed files in the local repository
+      || ------>git push
+remote repository
+
+
+i) git  init ------> Initialized empty Git repository 
+git config --global user.name "our name"
+git config --global user. Mail "ourmailid@gmail.com"
+
+ii) git status ------>//untracked files
+
+iii) untracked to tracked (red colour)
+        git add <filename>
+	git add .
+	git add *.tx
+iv) git status  -----> //tracked state (green color) - ready to commit(local repository)
+
+v) if you want redo the operation -------> git rm --cached  filename
+git add .
+git add filename
+git add *.txt
+git add <directory>
+
+
+
+ git clone ---------> cloning the existing repository
+ git commit -m "commit message" -----> to commit our files.
+ git log -----> to check commit history
+ git log -2 / git log --one line
+ ls -----> to check our history 
+ git branch -------> to see all branches
+ git branch <branch name> ------>creating a new branch
+ git branch -d <branch name> -------> delete a branch
+ git checkout <branch-name> ------> creating a new branch and switch to that new branch
+ git push (If Branch Name same we can use direct command ) 
+ git push -u origin Branch Name (if we are in different Branch)
+ git merge <branch name> ------> Merge changes into current branch
+
+git clone gitURL
+cd gitFolder
+create files (touch)
+git add <filenames>
+git add . (Add all files)
+git status 
+git commit -m "commit message"
+git log / git log -2 / git log --one line
+
+git pull origin Branch Name
+git fetch
+
+
+	Config git remote repository to local repo
+	--------------------------------------
+	git remote add az(origion) <URL> https://github.com/DevOps-Eng-Blr/DevOps_Docs.git
+	git remote -v 
+	git push az(aliasName) master
+	git remote remove az(aliasName) 
+ get back to working area from staging area??
+	git reset (all stagged file move to working area)
+	git reset <fileName> (for Particular file)
+	
+	How to go back to previous version of code
+	git reset --hard f1cd7c3(commitID)
+	
+	How to revert back recently committed from remote server??
+	git revert <recent commitID>
+	
+	How to revert back previously commited in remote server??
+	Its only possible recently committed once. but not possible to revert back previous commits.
+	
+	How to know, how many files are committed in particular commitedId??
+	git show <CommitID> (CommitID 6 to 7 charactors aslo fine)
+	git show --pretty="" --name-only <commitID>  --> it will show only committed file names
+	
+	git clean -n (would remove untracked file)
+	git clean -f (remove untracked files)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

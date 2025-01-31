@@ -1,0 +1,227 @@
+1)what is git ?
+Git is a distributed version control system that helps track changes in code, enabling collaboration and history management in software development.
+
+2) difference between Git and GitHub ?
+Git                                                                 GitHub
+----                                                                -------
+1)      Git is a software.	                             1)GitHub is a service.
+2.	Git is a command-line tool	                     2GitHub is a graphical user interface
+3.	Git is installed locally on the system	             GitHub is hosted on the web
+4.	Git is maintained by linux.	                     GitHub is maintained by Microsoft.
+5.	Git is focused on version control                    GitHub is focused on centralized source code hosting. 
+                      and code sharing.	
+6.	Git is a version control system                      GitHub is a hosting service for Git repositories
+                 to manage source code history.  	                                                        .
+7.	Git was first released in 2005.                       GitHub was launched in 2008.
+8.	Git has no user management feature.                  GitHub has a built-in user management feature. 	
+9.	Git is open-source licensed.	                     GitHub includes a free-tier and pay-for-use tier.
+
+3)What is the abbreviation of VCS? 
+The abbreviation VCS stands for Version Control System.
+
+4)What is the abbreviation of SCM? 
+The abbreviation SCM stands for Source Control Management or Software Configuration Management.
+
+5)Write down 5 SCM names?
+Git – A distributed version control system widely used in both open-source and enterprise environments.
+Subversion (SVN) – A centralized version control system often used for larger projects and teams.
+Mercurial – A distributed version control system known for its performance and scalability.
+Perforce – A centralized version control system commonly used in industries that require robust scalability, like gaming and large-scale development projects.
+IBM Rational ClearCase – A configuration management tool used by enterprises, supporting version control and workspace management.
+
+6)what is Branch?
+A branch is a parallel version of a repository, allowing developers to work on changes independently without affecting the main codebase.
+
+7)what is a tag?
+A tag is a labeled snapshot of a specific point in a repository’s history, often used to mark release versions.
+
+8)What is the difference between Branch and Tag? 
+A branch :Branch is a movable line of development that allows ongoing changes, enabling parallel workstreams that can later be merged back into the main codebase.
+A tag : tag is a fixed snapshot of a specific commit, often used to mark stable releases or significant milestones, and does not change over time.
+
+9)When we will create the branch and when we will the create tag? 
+creation of branch
+--------------------
+Create a Branch when you need to work on a new feature, fix a bug, or experiment without affecting the main codebase. Branches are ideal for isolating development tasks until they’re ready to be merged back into the main or production branch.
+creation of Tag
+----------------
+Create a Tag when you want to mark a specific, stable point in your codebase, often for releases. Tags are commonly used to label release versions (e.g., v1.0, v2.1) so you can easily reference a specific state of the code for future reference or deployment.
+
+
+10)What is “git add” command will do? 
+The git add command stages changes (new files, modifications, or deletions) in the working directory
+
+11)What is the command to revert the code from staging area to working area? 
+The command to revert code from the staging area back to the working area is: ------>git reset <file>
+to unstage all staged files: ------>git reset
+
+
+12)What is the git revert command?
+The git revert command is used to create a new commit that undoes the changes made in a previous commit.
+the command is ---->git revert <commit-hash>
+
+13)What is the difference between fetch and pull in Git? 
+git fetch :just gets the changes without affecting your working directory.
+git pull  :fetches the changes and merges them into your current branch
+
+14)How to see how many branches are currently available in git repo? 
+Local branches:git branch
+Remote branches:git branch -r
+All branches (local and remote):git branch -a
+
+15)What is the command to create the branch? 
+ the command to create the branch -----> git branch <branch-name>
+
+16)How to switch from branch to another branch? 
+to switch from branch to another branch ------>git checkout <branch-name>
+
+17)How to create branch and how to switch to that branch in one command?
+ to create branch and how to switch to that branch in one command --------> git checkout -b <branch-name>
+
+18)What is the command to delete the branch in local repo? 
+           git branch -d <branch-name>
+
+19)What is the command to delete branch in remote repo? 
+          git push origin --delete <branch-name>
+
+
+20)What is git stash command? 
+Stash changes: ------> git stash
+Stash changes including untracked files: ----> git stash -u
+List all stashed changes: -----> git stash list
+Apply the latest stash: -----> git stash apply
+Apply a specific stash: ------> git stash apply stash@{n}
+Remove a specific stash: ------> git stash drop stash@{n}
+Pop the latest stash: -------> git stash pop 
+Clear all stashes: ------> git stash clear
+
+21)What is PAT? 
+PAT stands for Personal Access Token. It is a secure alternative to using passwords for authentication when interacting with services like GitHub, GitLab, Azure DevOps, or other Git hosting services.
+
+22)What is SSH key and how to generate ssh-key? 
+An SSH keys used to authenticate securely between your local machine and a remote server (like GitHub, GitLab, or Azure DevOps). 
+It consists of two parts:
+Public key: Shared with the remote service (like a Git hosting provider).
+Private key: Kept secret on your local machine.
+
+23)What is the default path for ssh keys? 
+The default path for SSH keys is:
+Private key:--------------->  ~/.ssh/id_rsa
+Public key:----------------> ~/.ssh/id_rsa.pub
+
+
+24)How to rename the branch name? 
+                    git branch -m <new-branch-name>
+
+25)What is the command to get the code from remote git repo? 
+                    git clone <repository-url>
+
+26)What is the command to see all git messages in local repo? 
+        git log --oneline---->all msgs in one line 
+        git log ------->View the full commit history
+
+27)How to create the repository in git? 
+          Go to GitHub, log in, and click on New Repository.
+
+28)What is SubGit? 
+SubGit : subgit is a tool that enables bidirectional synchronization between Git and Subversion (SVN) repositories, migration and parallel usage of both version control systems.
+
+29)In Which language Git is developed?
+      Git is developed in C programming language.
+
+30)What is the difference between git merge and git rebase? 
+   Git Merge                                                                                      Git Rebase                     
+   ------------                                                                                  -------------
+                                                               
+Git Merge merges two branches to create a “feature” branch.	                Git Rebase rebases the feature branch to add the feature branch to the main branch.
+Git Merge is comparatively easy. 	                                        Git Rebase is comparatively harder.
+Git Merge safeguards history.	                                                Git Rebase doesn’t safeguard history.
+Git Merge is more suitable for projects with the less active main branch.	Git Rebase is suitable for projects with frequently active main branches.
+Git Merge forms a chain-like structure.	                                        Git Rebase forms a linear structure.
+Git Merge is preferable for large no. of people working on a project.	        Git Rebase is preferable for small groups of people.
+Single line command is:  git merge feature main                                 Single line command is: git rebase main
+
+31)What is the difference between git checkout and git reset and git revert?
+
+
+git checkout                                                      git reset                                             git revert
+--------------                                                  -------------                                         ---------------
+1)Discards the changes in the                 1)Untages a file and bring our changes back to the       1)Removes the commits from the remote repository
+working repository                                                    working repository  
+2)Used in the local repository.               2)Used in the local repository.                           2)Used in the remote repository.
+3)Does not make any changes to                3)Alters the existing commit history,                     3)Adds a new commit to the existing commit history.
+          the commit history
+4)Can be used to manipulate                   4)Can be used to manipulate commits or files.             4)Does not manipulate your commits or files.
+           commits or files.
+
+
+32)What is the git workflow? 
+The Git workflow is a process for managing code changes with version control. Here’s a simplified version:
+
+Clone the main repository to your local machine.
+Create a new branch for your work.
+Make changes, then commit them with a message.
+Push your branch to the remote repository.
+Open a Pull Request (PR) to merge your changes into the main branch.
+After review and approval, merge your branch.
+Delete the branch if it’s no longer needed.
+Pull updates to keep your local main branch in sync.
+
+33)What is merge conflicts? Have you resolved the merge conflicts? 
+i)Identify Conflicts
+ii)Edit the Conflicts
+iii)Stage the Resolved Files:----> git add <conflicted-file>
+iv)Complete the Merge: ---->  git commit
+
+34)How to see how many files are committed in one particular commit id? 
+                       git show --stat <commit-id>
+
+35)What is git hooks? Can you name some git hooks? 
+Git hooks are scripts that Git can run automatically at specific points in the Git workflow, allowing you to automate tasks, enforce policies, and manage project standards.
+Git hooks are stored in the .git/hooks directory.
+Types of Git Hooks --->2types
+-------------------
+Client-Side Hooks: Run on local machines to enforce rules before or after a commit, merge, or push.
+----------------
+Server-Side Hooks: Run on Git servers to enforce rules during a git push, git receive, or git update.
+------------------
+Common Git Hooks
+----------------
+pre-commit:------->  Runs before a commit is finalized. Often used to check code style or run tests.
+prepare-commit-msg:  -------->  Runs before the commit message editor is displayed, allowing modification of the commit message.
+commit-msg: -------- > Runs after the commit message is entered, allowing validation of the message content.
+post-commit:  ------------>  Runs after a commit is completed, often used to send notifications.
+pre-push: ----------->   Runs before a push, often used to ensure that all tests pass before pushing.
+pre-receive (server-side):  -------->  Runs on the server before accepting a push, allowing validation of changes.
+post-receive (server-side): -------->   Runs on the server after a push, commonly used to deploy code or notify a team.
+
+36) What is .gitignore file? 
+The .gitignore file lists files and folders that Git should ignore in a project. This keeps unnecessary files—like build files, environment configs, 
+or system files—out of version control. By adding file names or patterns to .gitignore, Git won’t track or commit those files to the repository.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,207 @@
+Q1. What is Cloud?
+
+Ans- Cloud is just another server in a remote location like a home NAS device.
+
+Q2. What is Azure?
+
+Ans- Azure is Microsoft’s Cloud Computing platform. It is a combination of services for creating, deploying, 
+and managing applications that run in Microsoft’s secure worldwide data centers.
+ Almost any software that can be imagined can be written to take advantage of Azure services and can run in the Microsoft Cloud.
+
+Q3. What is a Private Cloud?
+
+Ans- Private cloud is a cloud that is created by an organization for their own use and their own employees can only access that. Here the datacenter is privately stored in the organization itself.
+
+Q4. Is cloud service a collection of Data Center?
+
+Ans- Cloud Service is not exactly a Data Center but it has the similarity to a data center. And that is why Cloud Service is also referred to as a Remote Data Center.
+
+Q5. How is the Cloud different from Mainframe? It was also hosting applications remotely?
+
+Ans- Yes Cloud also stores and runs applications on remote servers. But, unlike the Mainframe where there is a centralized location to store the Server in Cloud, there is no centralized location to store the server. It is scattered across many individual servers across different geographical locations.
+
+Q6. What is Azure SLA for uptime?
+
+Ans- 99.9 % uptime.
+
+Q7. What is Auto-scaling in Azure?
+
+Ans- The ability to increase and decrease resources when needed. It is generally referred to as Scale-up and Scale down.
+
+Q8. How many Azure Regions are there?
+	Microsoft Azure currently consists of 60+ regions worldwide, available in 140 countries.
+
+Q9. Difference between ASM vs ARM?
+	ASM (Azure Service Manager ):
+	ASM stands for Azure Service Management. This is usually termed as Classic Deployment model. 
+	The classic resources can be provisioned and managed using Azure Classic portal, 
+	which can be reached at https://manage.windowsazure.com.
+
+	ARM ( Azure Resource Manager):  
+	ARM stands for Azure Resource Manager. This deployment model of Azure represents a different 
+	way to deploy and manage your Azure resources than in ASM model. Azure ARM portal can be reached 
+	at https://portal.azure.com.
+
+Q10. Network Security Group (Firewall) : 
+	A network security group contains security rules that allow or deny inbound network traffic to, or 
+	outbound network traffic from, several types of Azure resources
+	
+Q11. Router Table: Azure automatically routes traffic between Azure subnets, virtual networks, and on-premises networks. 
+	If you want to change any of Azure's default routing, you do so by creating a route table.
+
+Q12. End Points: Virtual machine on same cloud can communicate to each other.
+
+Q13. DDoS: Distributed Denial of Service.
+	Azure DDoS Protection Standard is a new offering which provides additional DDoS mitigation capabilities and 
+	is automatically tuned to protect your specific Azure resources.
+	
+Q14. Azure Firewall: Azure Firewall is a managed cloud-based network security service that protects your Azure Virtual Network resources.
+	It is a fully statefull firewall as a service with built-in high availability and unrestricted cloud scalability.
+
+Q15. DNS: Domain Name Servers
+
+Q16. Peerings: connecting two virtual networks
+	Vnet Peering: You can connect virtual networks to each other with virtual network peering. These virtual networks can be in the same region or different regions (also known as Global VNet peering). 
+
+Q17. How to create Virtual Machine:
+	Virtual Machines in All Services
+	Click on Add icon
+	Select Subscription and Resource Group
+	Enter the Virtual Machine Name
+	Image: Windows Server 2016 datacenter
+	Size: changes size and select b2ms
+	Enter user name and password
+	Public inbound ports: None
+	Click on Newdisk: Select Standard SSD
+	Click on Next Networking
+	Select Virtual Networking: AzureClassvNet1
+	Select Subnet: AzureClassSubnet1
+	Network security Group: Basic
+	Public Inbound Group: None
+	Click Next Management
+	Enable Basic plan for free: No
+	Boot Diagnostics: off
+	OS Guest Diagnostics: off
+	System Assigned auto Identity: off
+	Enable Auto  Shutdown: off
+	Enable Backup: off
+	Click on Advanced
+	Click on Tags : Env - Prod
+	Click review + create
+	Click Create
+	
+Q18. Allow RDP Port (3389) in Virtual Machine:
+
+	Visit Virtual Machine
+	Click on Networking
+	Click on Network security group: myfirstmachine-nsg
+	Click on inbound security rules
+	Click on Add icon
+	Source: Any
+	Destination: Any
+	Destination Port ranges:3389 (RDP:Remote Desktop port)
+	Priority: 100
+
+Q19. Change Network Security in Virtual Machine:
+
+	Port Name: Port-RDP
+	Allowing the RDP Port
+	Click on Add
+	
+Q20. How to connect to remote control:
+
+	Search Remote Desktop Connection
+	Enter the public IP from the Virtual Machine
+	Enter the Virtual Machine username and password
+	
+Q21. How to Login into PowerShell:
+
+	Search for Windows PowerShell and run as administrator
+	To know PowerShell version: $PsVersionTable
+	Login into Azure
+	 Account: Login-AzureRmAccount
+					Add-AzureRmAccount
+
+Q22.	Azure Modules Installation:
+
+	Install-Module   AzureRm -Verbose -Force
+	
+Q23. How to set Execution Policy:
+
+	Get-ExecutionPolicy
+	Set-Executionpolicy unrestricted
+	
+Q24. PowerShell Commands:
+
+	Get-AzureRmSubscription
+	Get-AzureRmVM
+	Get-AzureRmVM | select name
+	Get-AzureRmVM | select location
+	
+Q25. How to create Network Security Group:
+
+	Get-AzureRmSubscription
+	Get-AzureRmVM
+	Get-AzureRmVM | select name
+	Get-AzureRmVM | select location
+	
+Q26. How to create Linux Virtual Machine:
+
+	Virtual Machines in All Services
+	Click on Add icon
+	Select Subscription and Resource Group
+	Enter the Virtual Machine Name
+	Image: Ubuntu Server 18.04 LTS
+	Size: changes size and select b1ms
+	Enter user name and password
+	Public inbound ports: None
+	Click on Newdisk: Select Standard SSD
+	Click on Next Networking
+	Select Virtual Networking: AzureClassvNet1
+	Select Subnet: AzureClassSubnet1
+	Network security Group: Basic
+	Public Inbound Group: Allow selected ports
+	Click Next Management
+	Enable Basic plan for free: No
+	Boot Diagnostics: off
+	OS Guest Diagnostics: off
+	System Assigned auto Identity: off
+	Enable Auto  Shutdown: off
+	Enable Backup: off
+	Click on Advanced
+	Click on Tags : Env - Prod
+	Click review + create
+	Click Create
+	
+Q27. Allow SSH Port (22) in Linux Virtual Machine:
+
+	Visit Virtual Machine
+	Click on Networking
+	Click on Network security group: myfirstmachine-nsg
+	Click on inbound security rules
+	Click on Add icon
+	Source: Any
+	Destination: Any
+	Destination Port ranges: 22 (SSH:Putty port)
+	Priority: 100
+	
+Q28. How to connect to Linux using Putty:
+
+	Download and Install Putty from https://www.putty.org/
+	Open Putty Application
+	Enter Host name (ex: india@13.89.55.224)
+	Click on open
+	Enter the password
+
+Q29. Command to change user to admin (root user):
+	sudo su -
+	
+30. Connectivity Between two linux virtual machines in same Virtual Network:
+
+	Create one Resource Group
+	Create one Virtual network and two subnets
+	Deploy Linux Machines in Two Subnets
+	Connect Linux servers using putty
+	Try to ping private ip from one linux machine to another linux machine
+
+

@@ -1,0 +1,1072 @@
+ACR ----> Azure container Registry                      ### this 2 are serverless containers
+ACI ----> Azure Container Instance
+
+INTRODUCTION TO DEVOPS::
+-------------------------
+DEVOPS ::
+-----------
+     ** DevOps is a software development practise that combines the words "development" and  "operation".   
+        It is a culture that gives special importance to the "collaboration" and "automation" and "continuous improvement"
+     ** DevOps is originated in 2007. 
+     ** DevOps is important because 
+                  ---------> deliver high quality product faster.
+                  ---------> respond to the market demands quickly.
+                  ---------> stay competitive.
+                  ---------> innovative quickly.
+                  ---------> respond to customer and needs more efficiently.
+
+DevOps practices and principles::
+---------------------------------
+         -----> team empowerment.
+         -----> cross team communication and collaboration.
+         -----> Technology Automation.
+         -----> continuous monitoring.
+         -----> shifting left.
+
+There are two Traditional Software development models . they are 
+           ** Developers
+                 ----> Plan
+                 ----> code
+                 ----> Test
+                 ----> Build
+
+           ** operations 	
+                 ----> Deployment
+                 ----> High availability taking backups
+                 ----> Backups
+
+Key Goals of DevOps::
+----------------------
+      1) Speed ------> Quickly deliver to the end user.
+      2) Quality -----> No compromising the Quality.
+      3) Reliability ---> Avoiding (or) No Down times operational destructions.
+      4) Collaboration --> Having culture development between development and operations team.
+      5) efficiency -----> Optimize the Resource usage and reduce the manual work. 
+
+DevOps Transformation Journey::
+--------------------------------
+     ** https://www.suse.com/assets/img/devops-process.png --------> image of DevOps
+
+1) CI ------> Continuous Integration   -------> on going and testing of code
+2) CD ------> Continuous Delivery --------> changes are automatically built, tested, and prepared for release to production.
+        
+       DEV or (CI) or DEVELOPMENT                    OPS or (CD) or OPERATIONS
+     -----------------------------                 -----------------------
+            PLAN                                           RELEASE 
+            CODE                                           DEPLOY
+            BUILD                                          OPERATE
+            TEST                                           MONITOR 
+
+3) VERSION CONTROL SYSTEM (VCS):
+           **version control is a software development practice that tracks and manages changes to code and other files
+  there are 2 common types of vcs . they are
+       i) Centralized : Stores all the changes in one central location.
+      ii) Distributed : Each team member makes the changes to a local copy of the repository.
+
+4) AGILE  MODEL ::
+------------------
+         ** It is one of the SDLC model                      ##SDLC -----> Software Development Life Cycle
+          * It is consider as a flexible model
+          * Product was divided into "Chunks" (small parts)
+          * It follows short cycles called as "SPRINTS"             ## SPRINT is known as time boundary (( 2 - 4 weeks ))   example ---> Daily meetings called as "scrum"
+          * Taking the user inputs and follows the product
+          * User Advantages are more
+     
+    Requirement
+       ||
+     Design
+       || 
+     Develop
+       || 
+      Test
+       ||
+     Deploy
+       ||
+     Review
+       || 
+     Launch
+
+Difference Between Agile model and Scrum Framework ::
+ 
+         Aspect	                        Agile Model	                     Scrum Framework
+       ----------                      --------------                       ------------------       
+       Definition	             Philosophy/mindset	                  Specific framework within Agile
+       Structure	                  Flexible	                     Highly structured
+         Roles	                        Not defined	                  Defined roles (Scrum Master, etc.)
+       Iterations	                  Flexible	                  Fixed Sprints (1-4 weeks)
+         Focus	                     Principles and values	          Process and iterative delivery        
+      Documentation	               Minimal, as needed	          Structured, based on artifacts
+
+Agile frameworks::
+      i) Scrum -------> Scrum Master , product owner , development team , Daily standup calls , sprint plannings , retrospective . 
+     ii) Crystal --------> To deliver a high quality software maintaining the Flexibility , adaptability Team Dynamics .
+                **for small Team (6 people) we use ""Crystal Clear"" , medium team (8-10)  ""crystal Yellow"" for large team (< 10) crystal orange , extra large teams ""Crystal red""      
+     iii) XP : pair programming 
+     iv) FDD :
+      v) Kanban
+
+
+   waterfall model::
+ --------------------
+         **It is a Rigid model
+          *Involvement of the end user is very less
+          *Each face is completed before going to the next face
+          *It is inflexible
+          *bugs may not fount until the end
+             
+       Requirement
+            ||
+          Design
+            ||
+        Development
+            ||
+          Testing
+            ||
+         Deployment
+            ||
+         Maintenance
+ 
+5) MONITORING and LOGGING::
+--------------------------             
+        ** Monitoring refers to the process of continuously tracking the performance , availability , and behaviour of the applications , infrastructure , and service in real time. system  is running is efficiently and alert the DevOps team about any bugs or failures.
+
+Key Components of the Monitoring::
+----------------------------------
+    1) Metrics :: Collecting the data about the system performance               ### example :: CPU usage , Memory consumption , Request rates and error rates.
+    2) Dashboards :: visual interface displays key metrics and system health in real time .
+                      It helps Team to get a quick overview of the system status
+    3) Alerts :: Notifications or warnings triggered when specific threshold are exceeded       ### example :: high memory usage , low disk space.
+
+Why monitoring is important ??
+------------------------------
+ 1) Proactive problem detection :: identify the issues before that impacts the users.
+ 2) System Optimization :: helps in finding bottlenecks and inefficiencies in system performances.
+ 3) Improved Reliability :: keeps the services available with minimal downtime by quickly addressing the issues .
+ 4) Capacity Planning :: helps the resources utilization to scale system efficiently .
+
+
+LOGGING::
+----------
+    ** logging refers to the process of capturing and storing detailed records of events , errors ,or message generated by the applications , systems , or Infrastructure.
+         logs help DevOps teams understanding what is happening in their applications .
+ 
+key components of logging ::
+-----------------------------
+    1) logs :: detailed information about the events that occurs with in an application or system .         ## example :: login attempts. ser actions, application errors.
+
+Why logging is important??
+--------------------------
+    1) troubleshooting :: provide the detailed contexts for the diagnosis issues and understanding application behaviour , security auditing and compliance.
+
+6) CLOUD ::
+-------------
+     ** The CLOUD refers to the delivery of computing services . such as servers storage , databases , networking , software , and analytics over the internet.
+
+Cloud has2 types :
+------------------
+
+       Deployment model:
+       ------------------
+            i) Public cloud   -------- >Def:: public cloud is an third party services provider (AZURE , AWS , Google).
+                                      * The Infrastructure is multiple Customers (Tenants).
+                                      * resources can be easily scaled .
+                                      * Efficiency low cost .
+           ii) Private cloud  -------- >Def :: private cloud is exactly used by one organization only. It can be hosted by an on premises or by a thirty party provider.
+                                      * the infrastructure is dedicated to a single user.
+                                      * it is more Secure that other clouds .
+                                      * Ex :: VMware vSphere- based private clouds , opening stack , private env build with Azure stack.
+          iii) Hybrid cloud   -------- >Def :: combination of private cloud, public cloud, and on-premises infrastructure to develop, 
+                                                  deploy, and manage applications and services.
+
+       Service Type models:
+       --------------------
+           i) Infrastructure as a Services (IaaS)  -----> getting the infra from the cloud providers     ### Example :: Virtual machines
+                                                           ** getting  Virtualized resources
+          ii) Platform as a services (PaaS)   -------- > Deployment the code 
+                                                           ** Quickly deploy and manage resources
+                                                           ** App services instances 
+         iii) Software as a Services (SaaS)  ---------- > Access the application over the internet 
+                                                           ** ex ::outlook , calendar , Azure DevOps services.
+
+7)MICROSERVICES ::
+--------------------
+
+
+8)INFRASTRUCTURED AS A CODE:: (IaaC)
+--------------------------------------
+     ** Managing the Infrastructure code for the reusability in the form of scripts or ARM templates, collaboration and version controls 
+     ** the scripts stored in the version control  ----> git repos
+  
+9) CONTAINERS ::
+-------------------
+     ** containers are light weight, portable units that package an application and its dependencies like (libraries and binaries , configuration files)into a single isolated environment.
+     ** traditional VM's , containers share the host system kernel but remaining isolated each other.
+     ** containers are typically created using containerization platforms like ""Docker or Kubernetes"".
+     ** A container image is a ""standalone"" , executable package that includes everything needed to run a piece of software.
+
+Why containers are popular??
+-------------------------------
+1. Portability::
+-----------------
+         * Containers encapsulate applications and their dependencies, making them platform-agnostic.
+         * Developers can build containers on their local machine, and they’ll run consistently in any environment—whether on-premises, in the cloud, or in hybrid setups.
+
+2. Isolation::
+---------------
+         *Each container runs in its own isolated environment, ensuring that dependencies and configurations don’t conflict with others.
+         *This is particularly useful in DevOps, where multiple applications or versions often run simultaneously on shared infrastructure.
+
+3. Lightweight and Efficient:
+-------------------------------
+         * Containers are much smaller than virtual machines (VMs) because they share the host OS kernel rather than bundling a full operating system.
+         * This reduces resource overhead and allows faster startup times.
+
+4. Faster Development and Deployment:
+------------------------------------
+         * Containers enable developers to package applications with all dependencies into a single unit, simplifying the build and deployment process.
+         * DevOps teams can integrate containers into CI/CD pipelines for automated building, testing, and deployment.
+
+5. Scalability:
+---------------
+          * Containers can be easily replicated to handle increased loads, making them ideal for scaling applications dynamically.
+          * Container orchestration tools like Kubernetes and Docker Swarm automate scaling, load balancing, and failover.
+
+6. Consistency Across Environments:
+------------------------------------
+          * Containers eliminate the "works on my machine" problem by ensuring the same runtime environment across development, testing, staging, and production.
+
+7. DevOps Tool Integration:
+---------------------------
+          * Containers integrate seamlessly with DevOps tools and practices such as:
+                 ------ > CI/CD tools: Jenkins, GitLab CI/CD, CircleCI.
+                 ------ > Monitoring tools: Prometheus, Grafana, Datadog.
+                 ------ > Version control: Docker images can be versioned and stored in container registries.
+
+8. Microservices-Friendly:
+---------------------------
+          * Containers are an ideal fit for microservices architectures, where applications are divided into smaller, independently deployable services.
+          * Each microservice can be deployed in its own container, enabling independent development and scaling.
+
+9. Improved Resource Utilization:
+----------------------------------
+          * Containers use fewer resources than VMs because they share the OS kernel. This allows running more containers on the same hardware compared to VMs.
+
+10. Rapid Start-Up Times:
+-------------------------
+          * Containers start in seconds (or less), enabling faster deployments and reducing downtime.
+
+11. Easier Rollbacks:
+----------------------
+          * Containers can be easily versioned, allowing DevOps teams to roll back to a previous version if an update causes issues.
+
+DIFFERENCE BETWEEN VIRTUAL MACHINE AND CONTAINER::
+-------------------------------------------------------
+  Aspect	                            Virtual Machines (VMs)	                                   Containers
+----------------                           --------------------------                                     --------------
+Abstraction Level	         Hardware-level virtualization.	                             OS-level virtualization.
+Components	                 Includes a full OS, libraries, and applications.	     Includes only the app and its dependencies; shares host OS kernel.
+Hypervisor/Engine	         Requires a hypervisor (e.g., VMware, Hyper-V, KVM).	     Uses a container runtime (e.g., Docker, container).
+Size	                         Larger (e.g., gigabytes) due to the full OS.	            Smaller (e.g., megabytes) since only the app and its dependencies are packaged.
+Startup Time	                 Slower (minutes) as the full OS must boot.	            Faster (seconds or less) since it uses the host OS kernel.
+Resource Overhead	         High due to having its own OS and kernel.	            Lightweight; shares the host OS kernel, reducing overhead.
+Isolation	                 Stronger, as each VM has its own OS and kernel.	    Weaker, as containers share the host OS kernel.
+Security	                 More secure; vulnerabilities are contained within the VM.  Less secure; exploits may affect the host or other containers.
+Portability	                 Less portable due to larger size and dependency on hypervisor.	Highly portable across environments (cloud, on-premises, local).
+Performance	                 Slower due to OS overhead and emulated hardware.	     Faster as they directly leverage the host OS.
+Scaling	                         Resource-intensive and slower to scale.	             Quick and efficient scaling.
+Use Cases	                 - Legacy applications                                                 - Microservices
+                                 - Running multiple OS types                                           - DevOps workflows (CI/CD)     
+                                 - High-security needs.	                                               - Modern cloud-native apps.
+Examples	                 VMware, Hyper-V, KVM, VirtualBox.	                      Docker, Kubernetes, Podman, containerd.
+
+DOCKER IMAGE::
+--------------
+   ***A Docker Image is a lightweight, pre-configured blueprint used to create containers in DevOps.
+
+Benefits of Docker Images in DevOps::
+-------------------------------------
+Portability: Deploy applications across different platforms without modification.
+Consistency: Ensure all environments are identical.
+Scalability: Easily scale microservices by deploying multiple containers from the same image.
+Automation: Simplify CI/CD workflows by automating image creation and deployment.
+
+Tools for Managing Docker Images in DevOps::
+---------------------------------------------
+    *Container Registries:
+     ----------------------
+                 ""Docker Hub, Amazon ECR, Google Container Registry, Azure ACR,"" or self-hosted registries like Harbor.
+    *CI/CD Tools:
+   ----------------
+                 Integrate with ""Jenkins, GitLab CI/CD, or CircleCI"" to automate building, testing, and pushing Docker images.
+    *Orchestration:
+     ---------------
+                 Tools like ""Kubernetes and Docker Swarm"" pull and deploy Docker images as part of containerized workloads.
+
+Example: Creating a Docker Image::
+------------------------------------
+# Base image                                       #---> dockerhub
+FROM node:16                                      *** when we have to create a custom image we need base image in the first layer
+
+# Set working directory
+WORKDIR /app
+
+# Copy application files
+COPY package.json ./
+COPY app.js ./
+
+# Install dependencies
+RUN npm install                               
+
+# Expose application port
+EXPOSE 3000
+
+# Command to run the app
+CMD ["node", "app.js"]
+
+DOCKER CONTAINER::
+------------------
+       **A Docker container in DevOps is a lightweight, portable, and isolated runtime environment that packages an application and 
+          its dependencies to ensure consistency across development, testing, and production.
+
+Tools for Managing Docker Containers::
+-------------------------------------
+    * Docker CLI:
+     -------------
+             Core command-line interface for managing Docker containers.
+    * Kubernetes:
+     -------------
+             Leading orchestration tool for deploying and scaling containerized applications.
+    * Docker Compose:
+     -----------------
+             Tool for defining and running multi-container applications.
+    * Monitoring Tools:
+     -----------------
+             Use tools like Prometheus, Grafana, or ELK Stack to monitor container health and performance.
+
+Docker Containers in CI/CD Pipelines::
+-------------------------------------
+   * Build Stage:
+   ---------------
+              Docker containers are used to compile and build applications in isolated environments.
+   * Test Stage:
+    --------------
+              Containers ensure consistent testing environments with the same dependencies.
+   * Deploy Stage:
+    --------------
+              Containers are deployed to production, guaranteeing that the application behaves identically to staging.
+
+Benefits of Docker Containers in DevOps::
+-------------------------------------------
+  Benefit	                                          Explanation
+-----------                                              ---------------
+Portability	                     Containers run consistently on any platform with Docker installed.
+Faster Deployments	             Containers start in seconds, enabling rapid deployment and scaling.
+Isolation	                     Applications and dependencies run in isolated environments.
+Resource Efficiency	             Containers share the OS kernel, consuming fewer resources compared to VMs.
+Scalability	                     Containers can be scaled dynamically to meet demand.
+Reproducibility	                     Containers ensure the same application environment across all stages of DevOps.
+
+
+AZURE CONTAINER INSTANCE::
+--------------------------
+      **Azure Container Instance (ACI) is a managed service that allows you to quickly and easily run Docker containers in a serverless 
+         environment, without needing to manage the underlying infrastructure.
+
+AZURE KUBERNETES SERVICES::
+---------------------------
+      ** Azure Kubernetes Service (AKS) is a managed container orchestration service that simplifies deploying, managing, and scaling
+           containerized applications using Kubernetes on Azure.
+
+DIFFERENCE BETWEEN (ACI) AND (AKS)::
+------------------------------------
+     Feature	                                       ACI	                                                    AKS
+    ----------                                        ------                                                      --------
+   Complexity	                    Simple, serverless, and easy to use.	                     More complex, requires Kubernetes knowledge.
+    Use Case	                    Ideal for single containers or small workloads.	             Best for orchestrating large-scale workloads.
+  Scalability	                    Limited to container instance scaling.	                     Supports advanced scaling across multiple nodes.
+   Management	                    Fully managed by Azure.	                                     Requires management of Kubernetes clusters.
+
+
+AZURE APP SERVICES::
+--------------------
+      ***Azure Container Apps is a serverless platform for building and deploying microservices and containerized applications 
+         that automatically scale based on demand, without managing infrastructure.
+ --- > KEDA is Kubernetes-based Event-Driven Autoscaling.
+
+Difference between ACA and AKS and AAS::
+----------------------------------------
+Feature	                       Azure Container Apps	                Azure Kubernetes Service (AKS)	                                  Azure App Service
+----------                    --------------------------              --------------------------------------                             -----------------------
+Use Case	Event-driven, microservices, and serverless.	  Complex workloads requiring Kubernetes orchestration.	            Web applications and REST APIs.
+Complexity	 Simple, no cluster management.	                        Requires Kubernetes expertise.	                          Simplified for web and API hosting.
+Scaling	                    Autoscaling via KEDA.	                Advanced Kubernetes scaling options.	                     Limited scaling options.
+Management	Fully managed, no infrastructure to manage.	           Requires cluster management.	                                        Fully managed.
+Cost	             Pay-per-use based on execution time.	        Pay for cluster resources, even when idle.	                     Pay-per-instance.
+
+AZURE BOARDS::
+---------------
+        **Azure Boards is a project management tool in Azure DevOps for planning, tracking, and managing work items with Agile, Scrum, and Kanban support.
+
+Key Features::
+---------------
+1)Work Items:
+--------------
+---->Central to Azure Boards are work items, which represent individual tasks, bugs, features, or user stories.
+---->Customizable fields and templates are available to tailor work items to your team’s specific needs.
+
+2)Boards::
+---------
+---->Provides Kanban-style boards for visual task management.
+---->Teams can track the progress of tasks with columns such as "To Do," "In Progress," and "Done."
+
+3)Backlogs:
+------------
+---->Organizes and prioritizes work items in a hierarchical structure.
+---->Supports product backlogs, sprint backlogs, and epics for agile development.
+
+4)Sprints:
+---------
+---->Facilitates sprint planning, tracking, and execution.
+---->Integrated tools for capacity planning and burndown charts.
+
+5)Dashboards:
+-------------
+---->Customizable dashboards provide insights into project progress, workloads, and other key metrics.
+
+6)Reporting:
+------------
+---->Built-in analytics and reporting tools help monitor project health and team performance.
+---->Integrations with Power BI enable advanced reporting and visualization.
+
+7)Integration with Azure DevOps:
+---------------------------------
+---->Seamlessly integrates with other Azure DevOps tools like Azure Repos, Pipelines, and Test Plans.
+---->Allows traceability from requirements to code changes and deployments.
+
+8)Customization:
+----------------
+---->Highly configurable workflows and fields to match your processes.
+---->Supports custom rules, states, and queries.
+
+9)Collaboration:
+-----------------
+---->Enables discussions and comments directly on work items.
+---->Email notifications and mentions keep teams informed.
+
+10)Cross-Platform Support:
+------------------------
+---->Accessible via a web interface, Visual Studio, or third-party tools.
+
+SERVICE HOOKS::
+--------------
+         **Service Hooks allow you to integrate Azure DevOps with external services and automate workflows 
+                    when certain events occur (like code commits, work item changes, or build completions).
+         
+purpose of service hooks::
+---------------------------
+         ** Automates the workflows by sending the notifications and trigger actions in external system. when specifies events (like work item changes , code commits , or build completes happening in Azure DevOps
+ 	
+Example::
+---------
+          ** Send a message to Slack or Teams when a work item changes.
+          ** Trigger a Jenkins build when a pull request is completed.
+          ** Post an update to a webhook endpoint when a build is completed.
+        
+Services that supports the Service Hooks::
+-------------------------------------------
+          *** GitHub , Jenkins , Slack , Trello , Azure Functions and more
+
+SERVICE CONNECTION::
+----------------------
+           ** Service Connections enable Azure DevOps to connect securely to external services, tools, 
+                      or resources for tasks like deployments, builds, or other automation.
+
+purpose of service connections::
+---------------------------------
+           ** manage and authenticate secure connections between Azure DevOps pipelines and External services or cloud resources
+
+Example Use Cases::
+-------------------
+           ** Deploying to Azure App Services or Azure VMs from an Azure DevOps pipeline.
+           ** Connecting to AWS for cloud resource management.
+           ** Pulling artifacts or code from a GitHub repository.
+
+Services that supports the Service Connections::
+------------------------------------------------
+          *** Azure Resource Manager (ARM), GitHub , AWS, GCP, or Kubernetes connections , Generic service connections . 
+
+Difference Between Service Hooks and Service Connection::
+----------------------------------------------------------
+Feature	                         Service Hooks	                                 Service Connections
+-------                         ----------------                                 ---------------------
+Purpose	                Trigger actions in external services.	         Provide secure access to external tools.
+Triggers	        Event-based (e.g., work item changes).	         Manual or pipeline execution.
+Scope	                Notifications, event-driven workflows.	         Authentication for pipelines and tasks.
+Examples	        Send Slack messages, trigger webhooks.	         Deploy to Azure, connect to AWS, etc.
+
+SERVICE PRINCIPLE::
+--------------------
+       *** Service principle in Azure is an identity used by applications , services , and Automation tools to Access Azure Resources.
+           It allows for secure and controlled access to azure resources without requiring the user credentials.
+
+VERSION CONTROL::
+--------------------
+       *** version control is also known as source control
+           The practise of tracking and managing changes to the software code. 
+           version control system are software tools that helps software teams manage changes to source code. 
+
+GIT::
+-------
+    ** Git is a distributed version control system that tracks changes in code, enabling collaboration and version management.
+
+GITHUB::
+---------
+    ** GitHub is a cloud-based platform for hosting and managing Git repositories, enabling collaboration, version control, and code sharing.
+
+DIFFERENCE BETWEEN GIT AND GITHUB ??
+--------------------------------------
+Aspect	                                          Git                                               	GitHub
+-------                                           -----                                                ----------
+Definition	A distributed version control system for tracking changes in files.	    A cloud-based platform for hosting Git repositories.
+Purpose	        Manages code versioning and collaboration locally or remotely.	            Provides a centralized space to store, share, and                              
+                                                                                                          collaborate on code.
+Nature	                               Command-line tool.	                            Web-based service with additional tools for 
+                                                                                                          collaboration.
+Requirement	Can work offline and independently of any platform.	                    Requires an internet connection to access 
+                                                                                                          repositories online.
+Hosting	                         Does not host repositories.	                            Hosts Git repositories in the cloud.
+Features	     Version control, branching, and merging.	                            Pull requests, issues, CI/CD, and team collaboration 
+                                                                                                          tools.
+Ownership	Open-source software managed by the Git community.	                    Owned by Microsoft.
+Usage	              Installed on local systems for version control.	                    Accessed via a web browser or Git client for                               
+                                                                                                           repository hosting.
+WORKING COPY (or) WORKING DIRECTORY ::
+------------------------------------- 
+     ** contains the files that we are actively working on.
+      * changes the untracked files until staged
+      * In VS code: files are modify , stage , save . that will appear here.
+
+LOCAL REPOSITORY ::
+---------------------
+    ** stores the full history of our project (commit , branches)
+     * commits exists here once you have staged and commited them
+     * In VS code: shows the commit history , btranches , and current state.
+
+REMOTE REPOSITORY :: example -------> GitHub
+---------------------------------------------
+    ** the repository hosted on a server , which you can sync to using the git push or git pull.
+     
+   1) FORK::
+   -----------
+       ** A FORK refers to creating a copy of someone else repository under our own GitHub account.
+          this is primary used when we want to contribute to a project but we don't have permissions to push directly to the original repository.
+       
+       how fork works ??
+       ------------------
+            * Go to the repository on GitHub you want to fork.
+            * Click the "Fork" button (usually found at the top-right of the repository page).
+            * GitHub creates a copy of the repository in your account. This fork contains:
+            * All files, branches, and commit history of the original repository.
+            * A clear link back to the original repository, known as the upstream repository.
+
+       Workflow of the FORK ::
+       ------------------------
+            ** Fork: Original repository → Your GitHub account.
+            ** Clone: Your GitHub fork → Your local machine. 
+            ** Work: Create branches → Make changes → Commit.
+            ** Sync: Keep your fork up-to-date with upstream.
+            ** Pull Request: Submit changes from your fork to the original repository.
+ 
+   2) GIT CLONE ::
+   ----------------
+       ** git clone is a Git command used to create a local copy of a remote repository on your machine. 
+           It downloads all the files, branches, and commit history from the repository, allowing you to work on the project locally.
+
+         How Git Clone is used ::
+         ------------------------
+            * Provide Repository URL: Clone a repository using the repository's URL (HTTPS, SSH, or Git).
+            * Clone Data: Git downloads all files, branches, tags, and commit history.
+            * Create Directory: A new directory is created to store the cloned repository.
+            * Remote Setup: Git sets up a reference to the remote repository (origin).
+            * Checkout Default Branch: Git checks out the default branch (usually main or master).
+            * Start Working: You can now make changes, create branches, and commit to the local copy of the repository.
+
+Difference between FORK and GIT CLONE ::
+----------------------------------------
+  Feature                        	Fork	                                                Clone
+ ---------                              ----                                                    ------
+  Purpose	      Creates a personal copy of a remote repository	          Downloads a repository to the local machine
+  Location	             On GitHub (cloud-based)	                               On the developer's local machine
+  Used For	      Independent modifications or contributions	          Local development or testing
+  Relation	           Links to the original repository	                        No link to the original repository
+
+GIT HOOKS ::
+------------
+     ** git hooks are the scripts that Git automatically executes before or after specific event occurs in a repository.
+       * such as git commit , git push , git merge , git checkout. these hooks allow you to Automate tasks, enforce coding standards run tests or                  
+                                     trigger CI/CD .
+
+Uses cases and examples of client side hooks::
+----------------------------------------------
+ 
+  Hook	                                 Use Case	                                          Example
+ ------                                  ---------                                                -------
+Pre-commit	Linting, testing, and formatting checks before committing.	Lint JavaScript files, run unit tests.
+Commit-msg	Validate commit message format (e.g., require issue IDs).	Ensure commit message follows the required format.
+Pre-push	Run tests, check for sensitive data, ensure branch is                        Run tests, scan for secrets.
+                                  up-to-date before pushing.	
+Post-commit	Send notifications, trigger CI jobs after committing.	        Send Slack notification, trigger Jenkins job.
+Pre-merge-commit	Validate conditions before merging (ex:running tests).	Run tests or check for merge conflicts.
+Post-checkout	Automate tasks after checking out a branch.	                Install dependencies, configure environment variables.
+ 
+GIT SHALLOW COPY::
+------------------
+    **A shallow copy in Git refers to a repository clone that includes only the latest snapshot of the 
+                     	project’s files, and not the full commit history.
+
+git clone --depth :: syntax of the shallow copy 
+
+example :: git clone --depth 1 https://github.com/example/repo.git
+                            ||                        ||
+                            \/                        \/
+                     commit history number         GitHub clone url
+
+GIT LARGE FILE STORAGE (LFS) ::
+-------------------------------
+        *** GIT LARGE FILE STORAGE (LFS)  is an extension for Git that allows you to version control large files .such as media assets, datasets,
+             or other large the Git repository , while storing the actual large file on a remote server ( like GitHub , GitLab , bitbucket) 
+
+Git LFS commands ::
+-------------------
+git lfs install ------------ > Initializes Git LFS in your system and repository.
+git lfs track -------------- > Tells Git LFS to track a specific file type (e.g., git lfs track "*.jpg").
+git lfs untrack ------------ > Stops tracking a specific file type.
+git lfs ls-files ----------- > Lists all files currently being tracked by Git LFS.
+git lfs pull   ------------- > Downloads the large files from the remote LFS server.
+git lfs fetch  ------------- > Fetches large files from the remote server but doesn’t check them out.
+git lfs push --------------- > Pushes the large files to the LFS server.
+
+PIPELINES::
+-----------
+    ** A pipeline can be thought of a sequence of tasks that are executed automatically after certain event.
+        like pushing the code to a repository or creating a pull request.
+CI ------> CONTINOUS INTEGRATION 
+CD ------> CONTINOUS DELIVERY / DEPLOYMENT
+
+       CI                          CD
+       --                          --
+    restore 
+     build 
+     test 
+    publish 
+      ||
+      \/ 
+here output comes under CI pipeline
+
+-------> the CI output is used in the CD deployment
+
+
+
+we can write the pipelines in two ways . they are 
+       classic                               yaml 
+      no scripts                          writing yaml script
+      using of GUI                       we can reuse the yaml scripts
+                                         here we can use collaboration 
+                                         we can use version controlling
+  ***first we have to do the classic pipeline and then we have to go with yaml pipeline
+
+JOBS::
+------
+   ** A job is a unit of work or a set of tasks that perform a specific operation in a DevOps pipeline
+
+Examples of Jobs in DevOps Pipelines::
+---------------------------------------
+ 1) Build Job:
+---------------
+      ** Compiles the source code and resolves dependencies.
+      ** Outputs artifacts like JAR, WAR, Docker images, etc.
+Example:
+-----------
+job: Build
+steps:                                ### this is the yaml file
+  - script: mvn package
+
+2) Test Job:
+-----------
+     ** Runs automated tests (e.g., unit tests, integration tests).
+     ** Outputs test results and reports.
+Example:
+---------
+job: Test
+steps:
+  - script: pytest tests/
+
+3) Deploy Job:
+-------------
+      **Deploys the application to staging or production environments.
+Example:
+---------
+job: Deploy
+steps:
+  - script: kubectl apply -f deployment.yaml
+
+4) Linting/Static Code Analysis Job:
+------------------------------------
+      ** Runs code analysis tools to enforce coding standards and check for vulnerabilities.
+Example:
+-------
+job: Lint
+steps:
+  - script: eslint src/
+
+5) Monitoring/Notification Job:
+------------------------------
+      ** Sends notifications or logs metrics to monitoring tools after a successful or failed deployment.
+Example:
+--------
+job: Notify
+steps:
+  - script: send-slack-message success
+
+AGENTS::
+--------
+     ***An Agent in Azure DevOps is a software component that executes build and deployment tasks in a pipeline on a physical or virtual machine.        
+
+Agents Work in DevOps::
+-------------------------
+         1) Agent Connection:
+         --------------------
+                      ** Agents are connected to the DevOps tool (e.g., Jenkins, Azure DevOps, GitLab CI, GitHub Actions) and listen for jobs                                             
+                                               assigned by the server or controller.
+         2) Environment Setup:
+         ---------------------
+                      ** Each agent operates in an environment (e.g., a virtual machine, container, or bare-metal server) with pre-installed  
+                                           tools and dependencies necessary for the job.
+         3) Execution of Jobs:
+         ---------------------
+                      ** When a job is triggered in the pipeline, the server assigns it to an available agent.
+                      ** The agent pulls the required code, dependencies, or configurations and executes the job.
+         4) Reporting Results:
+        ----------------------
+                      ** The agent sends the output and status of the job (success or failure) back to the server.
+
+
+Use Cases of Agents in DevOps::
+-------------------------------
+          1) Building and Testing Code:
+          -----------------------------
+                 ** Agents compile source code, run automated tests, and generate build artifacts.
+          2) Deploying Applications:
+          --------------------------
+                 ** Agents handle deployment tasks to production, staging, or testing environments.
+          3) Running Automation Scripts:
+           ------------------------------
+                 ** Execute infrastructure-as-code tools like Terraform or Ansible.
+          4) Container Management:
+          -------------------------
+                  ** Agents can build and push Docker images or manage Kubernetes clusters.
+          5) Static Code Analysis:
+          --------------------------
+                  ** Perform linting or code quality checks using tools like SonarQube.
+         6) Parallel Execution:
+          ----------------------
+                   ** Run jobs in parallel across multiple agents to reduce pipeline execution time.
+
+YAML PIPELINE::
+---------------
+ 
+yaml ------> Yet Another Markup Language
+
+yaml file can configure the 
+          CI/CD pipelines
+          Kubernetes cluster
+
+*in the yaml file indentation is very important
+
+data structure of an yaml file
+--------------------------------
+scalar ---- > key value pair
+sequence [list]
+mapping [Dictionary] -----> { name , age , hobbies }
+
+BASH SCRIPT::
+-------------
+     **Bash scripts play a crucial role in DevOps by automating repetitive tasks, managing deployments, and configuring environments.
+
+      stage
+       ||
+      jobs
+       ||
+     steps
+       ||
+ collection of tasks
+
+Key Features in the Bash Script::
+----------------------------------
+     Logging:
+     --------
+          * A log_message function to timestamp all actions for easier debugging.
+     Git Integration:
+     ----------------
+          * Automatically pulls or clones the latest code from a repository.
+     Dependency Installation:
+     ------------------------
+          * Handles different dependency managers (e.g., npm, pip).
+     Service Restart:
+     ----------------
+          * Ensures the application is served by restarting the web server.
+
+most used in the Bash Script::
+------------------------------
+     Error Handling:
+     ---------------
+         * Use ""set -e"" at the beginning of scripts to exit on errors.
+         * include ""trap"" commands for cleanup on failure.
+     Permissions:
+     ------------
+         * Ensure proper permissions using ""sudo"" where necessary.
+     Security:
+     ---------
+         * Avoid storing sensitive data directly in the script; use environment variables.
+     Reusability:
+     ------------    
+         * Modularize scripts with functions and configurable variables.
+     Testing:
+     ------- 
+         * Test scripts in a staging environment before running them in production.
+
+PPELINE TRIGGERS::
+------------------
+    ***  we can trigger a pipelines based on repository activity , scheduled runs ,manual interventions . 
+
+1) Continuous Integration trigger ::
+------------------------------------
+   * CI triggers automatically run a pipeline when changes are made to the repository .
+   * Every time code is pushing to the repository , the pipeline is triggered to ensure the code remains integrated and free of breaking changes.
+
+trigger:
+ branches:
+  include:
+    -main 
+    -dev       ###  list of branches to be included 
+  exclude:
+    -feature/*    ### list of branches to be excluded 
+
+includes::
+----------
+   * specifies which branch will trigger the pipeline when changes are pushed
+
+excludes::
+----------
+   * Specifies the branch that are excluded from the CI trigger.
+
+2) Scheduled Trigger::
+----------------------
+   * Scheduled triggers are allow pipeline to run at specific times . regardless of whether there have been code changes .
+   * this is useful for daily or nightly builds batch processing or running tests on a regular basis.
+
+   -cron:"0 2 */4**"               ### cron expression to define the schedule (runs at 2am daily)
+     displayName: Daily build 
+        branches:
+         include:
+          -main
+
+CRON ----- > A cron expression defining when the pipeline should run. in the above example , the pipeline line runs at daily 2am.
+
+3) PIPELINE TRIGGERS::
+----------------------
+  ** A pipeline Triggers runs when another pipeline runs completely . this is useful for scenarios where you have multiple pipelines and want them to run sequentially 
+
+    trigger:
+     none                   ### Disable CI pipeline for this pipeline
+   resources:
+   pipelines:
+    -pipeline:'pipelineA'    ### the pipeline is to depend on.
+   source:'myproject-projectA'      ### the source pipeline name.
+  trigger:
+     branch:
+      include:	
+       -main
+
+pipeline-----> the name of the resource pipeline you want to trigger the current pipeline.
+source ------> the name of the other pipeline to trigger from.
+branch ------> Filters the branch on which the trigger occurs.
+
+4) PULL REQUEST TRIGGER::
+-------------------------
+    * PR triggers start a pipeline when a pull request is raised in the specified branch or set of branches. 
+    * this helps run builds and tests as soon as code is submitted for review.
+
+pr:
+ branches:
+  include:
+    -main
+    -dev
+
+branch.includes---->specifies the branches where a pull request will trigger the pipeline.
+
+5) PATH TRIGGER::
+-----------------
+    ** path trigger allows you to run a pipeline when changes are made in specific paths or directories with the repository.
+     *this is useful for monorepos.
+
+triggers:
+   paths:
+    include:
+      -src/*
+    exclude:
+      -docs/*
+
+include----> specifies the paths that will trigger the pipeline when changes are detected
+exclude ---> specifies paths that should be ignored.
+
+The pipeline will only trigger if there are changes in the src/ directory , and it will ignore changes made in the docs/ directory.
+
+
+JOBS ::
+-------
+        ** In DevOps, jobs represent a fundamental unit of work within automated pipelines used to build, test, deploy, or manage software and infrastructure. 
+                    Jobs consist of a series of steps that accomplish specific tasks, such as compiling code, running tests, or deploying applications. 
+
+1) MULTI AGENT JOBS::
+----------------------
+        *** Multi-agent jobs in DevOps pipelines are used to distribute tasks across multiple agents, enabling parallel execution and improving efficiency.
+                                                       (OR)
+         ** A multi -agent jobs runs the same task on multiple agents in parallel. this is useful for scenarios where you want to 
+                           speed up the build or test process by distributing work across multiple agents
+
+Key Concepts of Multi-Agent Jobs::
+----------------------------------
+       1) Parallelism:
+       ---------------
+              * Tasks within a pipeline can run simultaneously on multiple agents.
+              * Each agent operates independently with its own resources.
+       2) Agent Pools:
+       ---------------
+              * Jobs can target specific agent pools for specialized tasks (e.g., Linux vs. Windows agents).
+       3) Use Cases:
+       -------------
+              * Testing across multiple environments (e.g., different operating systems, browsers).
+              * Building artifacts for multiple platforms (e.g., ARM, x86).
+              * Parallel deployments to multiple regions.
+       4) Dependencies:
+       ----------------
+              * Outputs of one job can be passed as inputs to another job.
+jobs:
+ -job:Runtests
+  displayName:"Run Test on Multiple Agents"
+  pool:
+   name:"Azure Pipelines"
+   demands:
+    -agent.os-equals"Windows"
+  strategy:
+    parallel:3    ## run the job on 3 parallel agents
+   steps:
+    -task:UseDotNet@2
+     inputs:
+      packageType:"sdk"
+      version:"6.x"
+      installationPath:$(Agent.ToolsDirectory)/dotnet
+   -script:|
+        dotnet restore
+        dornet test--filter FullyQualifiedname~UnitTests
+       displayName:"Run Unit Tests"
+
+
+---> The Parallel: 3 settings tells Azure DevOps to run the RunTest Job on 3 different agents in parallel
+
+2) MULTI-CONFIGURATION JOBS::
+-----------------------------
+         *** Multi-Configuration Jobs in DevOps (also known as Matrix Jobs) allow pipelines to run a job or stage multiple times with varying configurations. 
+
+Key Benefits of Multi-Configuration Jobs::
+--------------------------------------------
+         Efficiency:
+         -----------
+             * Parallel execution reduces the overall pipeline time.
+         Comprehensive Coverage:
+         -----------------------
+             * Ensures the application works across all supported environments.
+         Scalability:
+        --------------
+             * Easily scales to add more configurations.
+         Dynamic Configuration:
+         -----------------------
+             * Can adjust configurations dynamically for specific use cases.
+
+trigger:
+  - main
+jobs:
+  - job: Test
+    displayName: "Matrix Testing"
+    strategy:
+      matrix:
+        Linux:
+          vmImage: 'ubuntu-latest'
+          NODE_VERSION: '14'
+        macOS:
+          vmImage: 'macos-latest'
+          NODE_VERSION: '16'
+        Windows:
+          vmImage: 'windows-latest'
+          NODE_VERSION: '14'
+    pool:
+      vmImage: ${{ matrix.vmImage }}
+    steps:
+      - task: UseNode@2
+        inputs:
+          version: ${{ matrix.NODE_VERSION }}
+      - script: |
+          echo "Running tests on ${{ matrix.vmImage }} with Node.js ${{ matrix.NODE_VERSION }}"
+          npm install
+          npm test
+
+Best Practices for Multi-Configuration Jobs::
+---------------------------------------------
+           Minimize Overlap:
+           -----   ----  ----
+                 * Avoid redundant configurations to save time and resources.
+           Optimize Resources:
+           -------------------
+                 * Use dynamic agents and adjust concurrency limits to prevent resource bottlenecks.
+           Aggregate Results:
+           ------------------
+                 * Ensure proper reporting and aggregation of job outputs for easier analysis.
+           Fail Fast:
+           ----------
+                 * Configure pipelines to stop further runs if critical configurations fail.
+           Environment Isolation:
+           ----------------------
+                 * Use containers or VMs to ensure each configuration runs in an isolated environment.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

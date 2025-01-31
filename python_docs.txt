@@ -1,0 +1,1088 @@
+invented in the year of ----->20 FEB 1991
+python invented by -----> GUIDO VANN ROSSUM
+
+1)VARIABLLES
+2)DATA TYPES
+        1. integer(int)
+        2. float
+	3. Boolean (bool)
+	4. complex
+	5. range
+	6. string(str)
+	7. list
+	8. tuple
+	9. set
+       10. frozenset
+       11. byte
+       12. bytearray
+       13. dictionary (dict)
+       14. None
+
+Variables
+----------
+	****to store the values
+			     [values = a number, name of a person, a decimal number]
+#Python variables follows  "dynamic memory allocation approach"
+How to create a variable in the python
+>>>a = 30
+a --> variable name
+30 -> stored value in the variable a
+=  -> assignment operator
+
+a --> variable name/Identifier
+30 -> value/literal
+=  -> assignment operator
+
+integers:  positive number, negative number along with zero
+
+c language
+-----------
+int a;
+a = 30;      #static memory allocation approach
+
+>>>b = 40
+pvm--> dynamic memory allocation approach
+Rules for the variable name(identifier name) [ variables, functions, oops, modules]
+
+Rule1)
+------
+identifier(variable name) name should be from this characters
+a-z  =29
+A-Z  =29
+0-9  =13
+ _   =01
+    -----
+      72
+     -----
+Rule2)
+------
+identifier should not start with a digit(first character)
+
+>>>9abc =40 [ WRONG]
+>>>9a = "hello" [WRONG]
+>>>a9bc = 34[correct]
+means, which are in the starting position => a-z , A-Z 
+		
+Rule3)
+------
+Python contains 35 reserved keyword
+we should not use them as a variable name
+
+How to get all reserved keyword in the python?
+>>>help('keywords')
+
+False               class               from                or
+None                continue            global              pass
+True                def                 if                  raise
+and                 del                 import              return
+as                  elif                in                  try
+assert              else                is                  while
+async               except              lambda              with
+await               finally             nonlocal            yield
+break               for                 not                 
+
+Rule4)
+-------
+identifiers are case sensitive
+>>> first_number = 30
+>>> FIRST_NUMBER = 50
+
+
+id()
+type()
+print() <-------------------
+\n ------> print in new line 
+\t ------> print in new tab
+print()
+help()
+
+2)DATATYPES
+-------------
+
+Identifiers
+---------
+>>>a=10
+a-> Identifier
+10 -> literal
+= -> assignment operator
+
+
+
+"print on this on the screen/host/console"
+
+print('the sum of',a,"and",b,"is",a+b)
+
+f'' format specifier works with curly braces {}
+
+print('the sum of',a,"and",b,"is",a+b)
+print(f'the sum of {a} and {b} is {a+b}')
+
+Datatypes:
+----------
+I)INTEGER
+----------
+INTEGER is denoted as ----> int
+			natural number  = 1,2,3,4,5,6,7,8,......
+			combination of positive and negative natural numbers along with zero
+
+
+1234
+I II III IV  -> Roman number system
+I
+V
+X
+L
+C
+D
+M
+
+#200
+   (10)
+
+100
+0b100
+0o100
+0x100
+
+converting decimal to binary :
+-----------------------------
+
+ex----> 280 is 100011000---> by doing the division method
+
+converting binary to decimal :
+----------------------------- 
+
+ex -----> 100011000
+(100011000)₂ = (1 × 2⁸) + (0 × 2⁷) + (0 × 2⁶) + (0 × 2⁵) + (1 × 2⁴) + (1 × 2³) + (0 × 2²) + (0 × 2¹) + (0 × 2⁰) = (280)₁₀
+               256      +  0       + 0        +  0        +   16    +    8     +   0      +  0       +   0      = 280
+
+converting decimal to octal :
+--------------------------
+
+Divide by the base 8 to get the digits from the remainders:
+
+Division by 8              Quotient         Remainder(Digit)           Digit #
+(320)/8	                      40	              0           	0
+(40)/8                         5	              0	                1
+(5)/8	                       0	              5 	        2
+= (500)8
+
+converting binary to octal:
+-----------------------------
+
+Convert every 3 binary digits (from bit0) to octal digit (see conversion table below):
+100011000
+= 100   011    000
+= 4      3      0
+= 430
+
+converting octal to decimal:
+-----------------------------
+
+500 = (5 × 8²) + (0 × 8¹) + (0 × 8⁰) = 320
+       320     +   0      +   0      =320
+     
+converting decimal to hexa decimal :
+------------------------------------
+
+Divide by the base 16 to get the digits from the remainders:
+
+Division by 16	         Quotient          Remainder(Digit)	         Digit #
+(330)/16	            20	                 10	                    0
+(20)/16	                     1	                  4	                    1
+(1)/16	                     0	                  1	                    2
+= (14A)16
+
+converting Hexa decimal to decimal:
+------------------------------------
+
+(320)₁₆ = (3 × 16²) + (2 × 16¹) + (0 × 16⁰) = (800)₁₀
+           768      +   32      +    0      = 800
+
+
+1  2 3 4 5 6 7 8 9 0 --> [10 digits] ------>  decimal number system
+
+0,1 -> binary number system
+
+0,1,2,3,4,5,6,7 -> octal number system
+
+0,1,2,3,4,5,6,7,8,9,10(a),11(b),12(c),13(d),14(e),15(f) -> hexa decimal number system
+
+
+oct() -> convert given integer to octal number system
+bin() -> convert any integer to binary number system
+int() -> convert any number to integer number system(decimal number system)
+
+python can recognize
+-------------------- 
+binary number can understand in python is --------> 0b    ## b,, o,, x are the small letters
+octal  number can understand in python is --------> 0o
+hexa decimal number can understand in python is --->0x 
+
+2) float : 
+--------
+           *** a float is a data type used to represent decimal numbers (numbers with a fractional part).
+5.5567 ------> float value
+5-integral part
+5567-decimalpart
+
+round()
+float(3) 
+float("3.5")
+float(input("enter a number"))
+
+
+3)bool :
+-------
+
+         ***a Boolean is a data type that represents one of two values: True or False.
+Yes/No
+Question Tags?
+True
+False
+direct   #True/False
+with help of 
+bool()
+
+Note: in a mathematical expression, True consider as 1, False consider 0
+
+0/False/' ' = False
+
+4) complex
+-----------
+2 methods
+a = 3+2j
+b =complex()
+
+
+a = 23434243
+one value at a time
+
+b = 32.3423423423423
+
+#Arrays : storing more than value with a single variable name
+5) range
+----------
+- iterable variable/object
+- just generates sequential integers[positive,negative,0]
+
+5,10,15,20,25,30,35
+1,2,3,4,5,6,7,8,9,10
+
+only one way
+-------------
+synatx:
+a = range(___,   ___,  ____)
+          start, end,  step
+           0            1
+
+
+a = range(  2 , 5)
+	 start,end
+start    end   step
+2        5      1
+output----> 2,3,4
+
+c = range(3,10,2)	
+start      end   step
+3          10     2
+output ----> 3,5,7,9
+c = range(3,10,2)
+c = |3|5|7|9|
+
+
+Using a negative step:
+----------------------
+for i in range(10, 0, -2):
+    print(i)
+
+Output:
+--------
+10
+8
+6
+4
+2
+Sequence decreases by 2.
+
+
+Empty range:
+-------------
+If the start and stop are such that no numbers fit the sequence, the result is an empty range:
+
+python
+Copy code
+for i in range(5, 5):
+    print(i)                 ### No output
+
+
+6) STRING (str):
+----------------
+str--> string datatype
+
+How to create a string variable
+--------------------------------
+string object [OOPS]
+Example
+-------
+int 
+a = 234
+b = int(0o1)
+
+float
+a =3.1434
+b = float("3.14")
+
+bool
+a = True
+b = bool(5)
+
+complex	
+a = 2+3j
+b = complex(2,3)
+	 
+range
+c = range(5)
+
+
+str
+direct method
+Method-1
+----------
+a= 'Good Morning'
+
+Method-2
+--------
+b = "Good Morning"
+
+Method-3
+--------
+multi line string / doc string / multi comment
+c = '''Koppala
+       Sreenivasulu
+        Reddy'''
+
+Method	 			
+--------
+d = """KOPPALA
+       SREENIVASULU
+       REDDY """
+	
+function approach
+b  = str()			
+
+Comment lines 2 lines
+
+#method01
+'''
+
+'''
+
+\n  = newline with print function 
+\n and \t where we have to use?
+
+		in the string
+
+		'-----------------'
+		"-----------------"
+		'''-----------------
+		-------------
+		---------------------'''
+		"""----------------
+		------------------
+		--------------------"""
+2) str()
+str(2) = '2'
+> "Python" + " Course"
+>  25 + 35 [wrong]
+> "25"  + "35"
+
+Which type of string values int function can convert?
+int("hi")
+int("two") ->Wrong 
+int('2') --> correct
+
+a = "python 123"
+type(a) = <class,'str'>
+len(a) = 10
+
+
+#print with for loop
+
+for i in a:
+	print("the item is",i)
+str+ range()
+------------
+
+iterable 
+----------
+1. indexing:
+--------------
+	1. forward
+	2. backward
+2. slicing :
+-------------
+Indexing: to access an item from the iterable
+		str[0] -> 'G'
+		str[1] -> 'o'
+		str[2] -> 'o'
+		str[3] -> 'D'
+       accessing a piece of iterable(may a single item, more than a single item)
+
+var="Python Automation"
+len(var) = 17
+slicing
+a[start:end:step]
+end-> always excluded
+step-> default 1
+
+a[start:end]
+a[start:end:1
+
+
+3) item assigment [str is a immutable]
+		- iterables
+		- in the same address of the given iterable variable, if we change[replace or del or add] any one of the character/value/item, then we call as mutable
+
+		not possible -> immutable
+
+changes
+-------
+1) replace:
+		a[4] = 'x'
+	or
+2) delete:
+		del a[5]
+	or
+3) add a new character to the variable
+		#method/index
+str is a immutable
+
+4) immutable
+
+5) for loop
+
+a   = "python"
+
+for i in a:
+print(i)
+for j  in  0,1,2,3,4,5:
+print("valeu is",a[1])
+
+str-actions
+range-actions
+int-actions/methods
+float-actions/methods
+#pending: str actions (47)
+
+6) list
+--------
+    *** a list is a collection of items 
+    *** Uses square brackets [ ] to define its elements.
+
+Uses square brackets [ ] to define its elements.
+
+
+iteable variable/object
+------------------------
+	7. list
+            we can create in 2 ways
+	        1. direct methods
+		2. list()
+	Hetrogenous : different category
+	Homogenous : same kind
+
+	direct method:
+	--------------	
+	>>>a = []
+        >>>len(a) -> 0
+	>>>b = [1,2,3.4,4.5,True,False,2,2,3,range(5),"Python","xyz",3,4,5]
+	items/values are seperated by commas
+        1->item
+	range(5) -> item
+        item -> may be iterable or non-iterable
+        list contains hetrogenous values(different datatype values)
+        duplicates values allowed
+        unique values 
+        k = [1,2,3,4,5]
+	q = [1,1,1,1,1]
+	r = ["python","python2",2,3,4]
+
+is it possible to store duplicate values in the range?
+k  = range(1,20)
+1-----> 19
+each value comes one 1 time
+
+
+str:
+----
+a = "Pppppyyyython"
+possible
+
+
+itaeble?
+-------
+      1. indexing
+	     forwarding
+	     backward/reverse
+      2. slicing : yes
+      3. item assignemnt( replace or add new or delte )
+      4. mutable/immutable : mutable
+      5. following the insertion order or not :yes
+      6. print with for loop (direct way  + range())
+
+
+Actions/methods(functions) of list datatypes
+---------------------------------------------
+1. append()
+2. extend()
+       c3
+3. copy()
+4. clear()
+5. count()
+       i2
+6. index()
+7. insert()
+      deletion
+8. pop(
+9. remove()
+		
+10. sort()
+11. reverse()
+
+
+Every datatype is a class in the python 
+
+If we create a variable, it is originally object of the class 
+
+
+-> every datatype/variable --> contains some actions -> (methods/functions) -> 
+        ->a = [10,20]
+          >>>type(a)
+	<class,'list'>
+        methods of the given datatype is
+        >>>dir(list)
+        >>>dir(a)  #variable/object
+
+extend
+------
+    append(anydatetype)
+    we stores at -1 position (new position)
+    append at the end of the list
+    iterable/non-iterable 
+    just add as an item at the end of the list
+
+     extend(itearble)
+     iterable = range,str,list,tuple,set,frozenset,dict,bytes,bytearray
+     non-itearble = int,float,bool,complex,None
+     extend("python")
+
+here str -> variable/value -> "python" -> items -> 'p','y','t','h','o','n' are the items in the list (extend methods)
+
+	1) append() -> at the item at the end of the list
+	2) extend() -> at the iterable variable items appended to the list
+			extend("python")
+			append("python")
+	3) clear()
+		>>>a = [10,20]
+		>>>a.clear()
+		delete all items
+	4) count(value)
+	5) copy
+	--------
+	       shallow copy
+	       deep copy
+	6) index
+	7) insert
+	8) pop() #index
+	pop() -> delete -1 position item
+	pop(index=-1)
+	9) remove()  # value
+	10) reverse
+	11) sort
+			sort(reverse=True)
+        12) insert
+comparsion operators::
+---------------------
+
+		> -----> greater than 
+		>= ---->greater than or equal to
+		<------> less than
+		<= ----> less than or equal to
+		== ---->equal to
+		!= ---->   not equal
+
+all above comparsion/relational operators return bool value either True or False
+
+
+list methods
+------------
+	1. append
+	2. extend
+	3. copy
+	4. clear
+	5. count
+	6. index
+	7. insert
+	8. pop
+	9. remove
+	10. reverse
+	11. sort
+			
+1) startswith
+2) endswith
+3) title
+4) capitalize
+
+ isalnum', 
+'isalpha', 
+'isascii', 
+'isdecimal', 
+'isdigit', 
+'isidentifier', 
+	rules for the identifier : azAZ09_
+'islower',
+'isnumeric', 
+'isprintable', 
+'isspace', 
+'istitle', 
+'isupper', => yes
+		converting a string into upper case  upper()
+
+input() -> 5 inputs 
+a = input("enter subjects")
+
+set
+----
+(based on the item assigment{replace,delete, add a new} set object/variable is a immutable)
+	- iterable variable
+	- you can store hetrogenous datatyps
+
+but
+----
+--->- it not follows the inserting order (unordered) => unindexed
+          => slicing not work
+- set :  always consider unique values (duplicate ignore)
+
+how to create a set
+---------------------
+1. direct methods
+non-empty set creation:
+-----------------------
+	a = {10,20,'python',40,30}
+	empty set creation is not possible directly in this direct methods
+	b = {} --> dict
+2. with help set() function
+        c = set()
+	d = set(iterable)
+
+If a variable/object is iterable we have to check 6 rules
+	1. indexing
+	2. slicing
+	3. item assigment[replace,add,delete]
+	4. mutable/immutable
+	5. print for loop (directly) and with help of the range()
+	6. insertion order?
+
+a = {1,2,3,4}
+b = {3,4,5,6}
+c=  {7,8}
+d={2}
+
+1) intersection: common elements : a.intersection(b) = {3,4}
+			           b.intersection(a) = {3,4}
+
+2) isdisjoint : if there is no common element in the given set
+				a.isdisjoint(c) => True
+			        b.isdisjoint(a) => False
+3) Union: all element of given set but write the common element once
+				a.union(b) = {1,2,3,4,5,6}
+				b.union(a) = {1,2,3,4,5,6}
+4) difference of set: take the given first set items, if anything repeated in the set2 ignore it
+                                a.difference(b) = {1,2}
+				b.difference(a) = {5,6}
+5) symmetric set: ignroe the intersection/common elements of the given set
+				a.symmetric(b) = {1,2,5,6}
+			        b.symmetric(a) = {1,2,5,6}
+6) subnet/superset
+	                       d.issubnet(a) => True
+	                       a.issuperset(d) => True
+
+
+
+
+10) dictionary : dict
+       -> mutable
+       -> insertion order
+       list = [10,20,'python',34,324,32]
+      10-> item/value
+      20-> item/value
+      'python'-> item/value
+ dict-> item/value = > composite datatype
+how to create a dict variable
+        1) direct method
+	      a = {key:value, key:value,key:value,key:value}
+              key-> unique
+	      value-> may be duplicate
+
+
+1. Datatypes(Idea of python: 14 built-in)
+2. Operators (programming skills)::
+------------------------------------
+		Purpose: operators works on operands
+				2 + 3
+				2,3 -> operands
+				+ -> operators	
+			Index:
+		1. Arithmetic operators
+			+ works with string and numbers
+			-
+		        *  works with strings and numbers
+			/ [ return float quotient]
+			// [ floor division: always returns integer quotient]
+			% [ remainder ]
+			** [exponent]
+		2. Assignment operators
+			1. single value assignment operator
+			     a = 5
+			     b = 2+3-2-1-100
+			"=" -> assignment operator, it evalues the it's right expression and stores the result in to the left side variable
+			2. multi value assignment operators
+			     a,b,c = number of vaulues/iterable
+                             a,b  = 10,20
+                             10,20 -> tuple
+
+			3. Relation/comparison operators
+			    Returns: True,False
+			    ==
+			    !=
+			    >
+			    >=
+			    <
+			    <=	
+			4. Logical operators (connector b/w the comparison operators)
+				***
+			        AND
+                                OR
+                                NOT
+			 P  Q    P and Q 
+			--  --  -------
+ 			T   T    --> T	
+			T   F    --> F
+			F   T    --> F
+			F   F    --> F
+PQR  P and Q and R
+---  -------------
+TTT   T
+TTF   F
+TFF   F
+TFT   F
+FFF   F
+FFT   F
+FTT   F
+FTF   F
+
+
+PQRS
+----
+TTTT
+TTTF
+TTFT
+
+			5. Membership operators
+					in
+					not in
+			6. Identity operators
+						is
+						is not
+			7. Bitwise operators
+						left shift operator <<
+						right shift operator >>
+						bitwise and &
+						bitwise or |
+						bitwise xor ^
+						bit compile operator ~
+
+
+if conditions
+--------------
+if <condition>:
+	---------
+	---------
+	---------
+	---------
+
+name  = input("ente the file name") 
+#name -> str
+
+1) ending with ".pdf"
+2) containing -> "hello"
+
+
+name -> myfilehelloworld.pdf
+
+
+a = {"name": "user01","sal": 20}
+			x,y = ('name','user01')
+		
+Regular Expressions::
+----------------------
+
+pattern symbols ::
+-------------------
+1)/d 
+/d --------------> a digit           #### digit means ---> ( 0,1,2,3,4,5,6,7,8,9 total 10 digits)
+/d/d-------------> any two continuous digits
+/d/d/d-----------> any three continuous digits
+/d/d/d/d--------->any four continuous digits
+(\d){10} -------->when we have more digits we can use command 
+\D -> OTHER THAN DIGITS ANY ONE
+
+                    EXAMPLE::
+                   -----------
+                            "hiii2256 to how2423 where236516451 you all" -match "(\d){2,3}"
+                              True
+                               PS C:\> $matches  ----> this is the command to check the matches
+
+                               Name                           Value
+                               ----                           -----
+                                1                              5
+                                0                              225                 
+key words :
+       Python::: Module: re
+       Linux::: Find/awk/sed : shell scripting
+       PowerShell:::match/-not match
+
+2) \w -----> character
+		a-z  		= 26
+		A-Z  		= 26
+		0-9  		= 10
+		_(underscore)   = 01
+				------
+				  63
+				------
+EXAMPLE ::
+----------  
+        PS C:\> "g-ood Morning  to all" -match "\w\w"
+          True
+          PS C:\> $matches
+         Name                           Value
+        ------                         -------
+          0                              oo
+
+
+3) .
+ in the pattern 
+ "\w.."
+ . -> any one single character [other than newline ]
+            EXAMPLE ::
+            ----------
+                          "hii to all where are you" -match "\w\w.."
+                            True
+                           PS C:\> $matches
+
+                             Name                           Value
+                            ------                         -------
+                              0                              hii
+
+4) *
+\d  = \d* = \d\d\d\d\d\d\d\d\d\d\d\d\d\d\\d\d\d\dw
+
+\w  
+\w* = \w\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w\w
+
+	* -> means any number of any characters it will keep up based on the first match in the string
+5) space : \s
+n number of continues spaces : \s*
+
+\w* or \w+  => 0 repeats/n number of fine
+
+6) any special
+"----------------------------"  -match ""
+\w
+\d
+\s
+##other than this above symbols
+string 				     pattern
+  &					\&
+  $					\$
+  \					\\
+  \\                                   \\\\
+  %!					\&\!
+
+
+.* --------------->  ..............
+\w* -------------->\w\w\w\w
+\d ---------------> \d\d\d\d\d\d\d
+- ================> \-
+
+^ -> starts with cap symbol    ### EX : ----> ^keyword
+
+$ -> ends with Doller symbol      ### Ex : ----> keyword$
+
+wild *
+-------
+abc* -> starting with abc
+*abc ->  ending with abc
+*abc* -> containing with abc
+
+
+BRACKETS::
+-----------
+1) [ - ] -----> sequential characters   -----> EXAMPLE:: A--> Z , C --> G .  ## it will not come in the reverse order  
+2) ( | ) --> "or" symbol      Example:: ---->ANT","MAN","DRAW","MNO","CNN","APPLE" -match '^(a|c).*'
+                                                                          ANT
+                                                                          CNN
+                                                                          APPLE
+3) { , }   -----> example :: (\d){3,5} =======> \d\d\d
+                                                \d\d\d\d
+                                                \d\d\d\d\d
+
+
+NUMBER PATTERNS::
+-------------------
+Rules :
+       ipv4 
+      A   A   A   A     ### A= 0 - 255
+my ipv4 address ---> 103               .82        .209          .226
+                    (0 - 255)        (0 - 255)   (0 -255)      (0 - 255)
+       
+
+example ::(1)
+-----------
+
+find the number patterns from 20 - 39
+20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39
+
+smallest number --> 20    ### number of digits = 2
+Biggest number ---> 39    ### number of digits = 2
+
+     [   ]       [   ]                        ### we have to take the square brackets [] according to the number of digits
+     tens      ones/units
+
+     [2 - 3]      [0 - 9]  ------> we can write the 20 and 39 in the these form
+
+     $([][][])$  #accepts only 3 digits
+     $(   (2|5)[2-5][]()   ) $
+     ^([2-3][0-9])$  #fixed to 
+     ^()$
+
+example :: (2)
+--------------
+110 - 189
+----------
+smallest: 110 (3 digit)
+biggest: 189 (3 digit)
+
+ H     T    O
+[1] [1-8] [0-9]
+ 1  [1-8] [0-9]
+
+ 1    6     7
+
+------->there are 2 rules in the number patterns . they are
+RULE 1:
+-------
+WHEN THE SMALLEST NUMBER IS NOT 0 THEN WE HAVE TO USE THESE RULE 
+
+number pattern between 23 - 49
+#SMALLEST: 23
+	
+	>> smallest number unitplace/once place digit is 0(skip this method)
+	   (here 23, means unit/once place digit in smallest number is 3)
+
+	>> on the number line travel right side of the smallest number to get the very first number which contains with unit place value as 9
+
+
+	23.................29........................39...................49
+   (smallest)
+
+   23-29     |   30-49
+   [2][3-9]	    [3-4][0-9]
+   				    	
+   ([2][3-9]|[3-4][0-9])   
+
+RULE 2: biggest number is not equal to 9.
+-------
+
+2) BIGGEST
+
+40-85
+------
+- Biggest number unit place valus is 9(skip this method)
+  (here biggest number is 85, it's unitplaced values is 5(not 9))
+
+- travel left side of the number line of biggest number to reach very first number which contains it's unit place digits as 9
+
+
+40........................................79 80......85
+
+40-79         80-85
+[4-7][0-9]   [8][0-5]
+([4-7][0-9]|8[0-5])
+
+^()$
+
+Example 3:: applying 2 rules in the same problem.
+------------
+
+13-84
+------
+13......19 20.......................84
+13-19 = [1][3-9]
+			20-84
+			------
+			20...........................79 80.............84
+			20-79  = [2-7][0-9]              80.............84
+			                                 80-84 = [8][0-4]
+([1][3-9]|[2-7][0-9]|8][0-4])
+^()$
+"^(([1][3-9]|[2-7][0-9]|8][0-4]))$"
+
+
+Example ::(4)
+--------------
+0-255
+smallest number = 0
+biggest  number = 255
+
+we have to write these problem as  
+                      1 digit numbers   ---->0 - 9  =====> [0-9]
+                      2 digit numbers   ---->10 - 99 ====> [1-9][0-9]
+                      3 digit numbers   ---->100 - 255===> 100 -199 + 200 -255 ======> [1][0-9][0-9] + 200 -249 + 250 -255
+                                                                                                       [2][0-4][0-9] + [2][5][0-5]
+
+0-255 -====> [0-9]|[1-9][0-9]|[1][0-9][0-9]|[2][0-4][0-9] + [2][5][0-5]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
